@@ -72,8 +72,8 @@ const Mcode = () => {
 
       {/* Events Section */}
       <section>
-        <NonTechnicalEvents />
         <TechnicalEvents />
+        <NonTechnicalEvents />
       </section>
 
       {/* Footer Section */}
