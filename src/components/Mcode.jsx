@@ -53,7 +53,7 @@ const Mcode = () => {
         <h1
           className="animated-element"
           style={{
-            fontFamily: "Cyber Alert",
+            fontFamily: "Almie",
             color: "#fbccfd",
             fontSize: "45px",
           }}

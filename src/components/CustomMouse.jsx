@@ -18,7 +18,7 @@ const CustomMouse = () => {
   return (
     <BsFillCursorFill
       className="custom-cursor"
-      size={20}
+      size={25}
       style={{
         pos: "fixed",
         left: `${pos.x}px`,
