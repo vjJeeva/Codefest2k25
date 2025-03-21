@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../styles/TechnicalEvents.css";
+import "../styles/EventCard.css";
 
-const Card3D = ( {event} ) => {
+const Card3D = ({ event }) => {
   const [mousePosition, setMousePosition] = useState({ x: "50%", y: "50%" });
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
 
