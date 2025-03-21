@@ -28,7 +28,7 @@ const Header = () => {
       position: "fixed",
   
       width: "100%",
-      zIndex: "1",
+      zIndex: "999",
       padding: "20px",
       background: "rgba(255 ,244 , 254, 0.08 )",
             backdropFilter: "blur(10px)"
