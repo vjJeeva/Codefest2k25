@@ -1,0 +1,115 @@
+.css-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: transform 0.12s ease-out, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .css-cursor::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease;
+  }
+  
+  .css-cursor.hover {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .css-cursor.hover::after {
+    opacity: 0;
+  }
+  
+  .css-cursor.active {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  
+  .css-cursor.active::after {
+    width: 4px;
+    height: 4px;
+  }
+  p, h1, h2, h3, a, span {
+    cursor: none;
+  }
+  
+  .css-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 0;
+    transform-origin: center;
+  }
+  
+  .css-cursor.hover {
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    background-color: white;
+    opacity: 1;
+    mix-blend-mode: difference;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  .css-cursor.active {
+    transform: scale(0.8);
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  
+  p:hover, h1:hover, h2:hover, h3:hover, a:hover, span:hover {
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  a:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+  
+  a:hover:after {
+    width: 100%;
+  }
