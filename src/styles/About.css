@@ -20,6 +20,7 @@
   }
   
   .about-text {
+    color: white;
     width: 50%;
   }
   
@@ -34,6 +35,7 @@
   }
 
   .About-Title {
+    color: white;
     text-align: center;  /* Centers the text */
     font-size: 4rem;  /* Adjust size for good visibility */
     font-weight: bold;  /* Makes it stand out */
