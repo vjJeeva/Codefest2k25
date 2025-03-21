@@ -1,8 +1,8 @@
-
 import Background from './components/Background'
 import './App.css'
 import Mcode from './components/Mcode'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import CustomMouse from './components/CustomMouse'
 
 
 
@@ -10,6 +10,7 @@ function App() {
  
   return (
     <>
+    <CustomMouse/>
       <Background/>
       <Mcode/>
       {/* <BrowserRouter>

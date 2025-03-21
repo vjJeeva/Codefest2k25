@@ -55,4 +55,3 @@ const Card3D = ({ event }) => {
 };
 
 export default Card3D;
-
