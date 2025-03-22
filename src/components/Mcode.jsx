@@ -1,97 +1,10 @@
-// import React, { useState, useEffect, useRef } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import Header from "./Header";
-// import Footer from "./Footer";
-// import Time from "./Time";
-// import NonTechnicalEvents from "./NonTechnicalEvents";
-// import TechnicalEvents from "./TechnicalEvents";
-// import About from "./About";
 
-// const Mcode = () => {
-//   const [text, setText] = useState("Registration Open");
-//   const aboutSectionRef = useRef(null); // Ref for the About section
-//   const footerRef = useRef(null); // Ref for the Footer section
-
-//   // Toggle registration text
-//   const reg = () => {
-//     setText(
-//       text === "Registration Open" ? "Registration Close" : "Registration Open"
-//     );
-//   };
-
-//   // Handle scroll events
-//   useEffect(() => {
-//     const animatedElement = document.querySelector(".animated-element");
-
-//     const handleScroll = () => {
-//       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-//       // Pause the animation when scrolling
-//       if (animatedElement) {
-//         animatedElement.style.animationPlayState =
-//           scrollTop > 0 ? "paused" : "running";
-//       }
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <div>
-//       <Header />
-//       {/* Main Section */}
-//       <section
-//         className="main container"
-//         style={{
-//           height: "100vh",
-//           display: "flex",
-//           justifyContent: "center",
-//           alignItems: "center",
-//         }}
-//       >
-//         <h1
-//           className="animated-element"
-//           style={{
-//             fontFamily: "Almie",
-//             color: "#fbccfd",
-//             fontSize: "45px",
-//           }}
-//         >
-//           CODEFEST 2K25
-//         </h1>
-//       </section>
-
-//       {/* Timer Section */}
-//       <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} /> {/* Pass the refs to Time */}
-
-//       {/* About Section */}
-//       <section ref={aboutSectionRef}> {/* Attach the ref to About */}
-//         <About />
-//       </section>
-
-//       {/* Events Section */}
-//       <section>
-//         <TechnicalEvents />
-//         <NonTechnicalEvents />
-//       </section>
-
-//       {/* Footer Section */}
-//       <footer ref={footerRef}> {/* Attach the ref to Footer */}
-//         <Footer />
-//       </footer>
-//     </div>
-//   );
-// };
-
-// export default Mcode;
-
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Time from "./Time";
+import GradientText from "../../Reactbits/GradientText/GradientText";
 import About from "./About";
 import '../styles/CodeFestTitle.css';
 import EventToggle from "./EventToggle";
@@ -102,35 +15,29 @@ const Mcode = () => {
   const footerRef = useRef(null);
   const titleRef = useRef(null);
 
-  // Toggle registration text
+
   const reg = () => {
     setText(
       text === "Registration Open" ? "Registration Close" : "Registration Open"
     );
   };
+  window.addEventListener("scroll", function () {
+    const animatedElement = document.querySelector(".animated-element");
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-  // Handle scroll events
-  useEffect(() => {
-    const titleElement = titleRef.current;
+    // Pause the animation when scrolling
+    if (scrollTop > 0) {
+      animatedElement.style.animationPlayState = "paused";
+    } else {
+      animatedElement.style.animationPlayState = "running";
+    }
+  });
 
-    const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-      // Pause the animation when scrolling
-      if (titleElement) {
-        titleElement.style.animationPlayState =
-          scrollTop > 0 ? "paused" : "running";
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div>
       <Header />
-      {/* Main Section */}
+      {/* main sec */}
       <section
         className="main container"
         style={{
@@ -143,25 +50,27 @@ const Mcode = () => {
           background: "transparent",
         }}
       >
-        {/* Binary background effect */}
-        <div className="binary-background"></div>
-        
-        <div className="title-container">
-          <h1 ref={titleRef} className="codefest-title">
-            <span className="letter c">C</span>
-            <span className="letter o1">O</span>
-            <span className="letter d">D</span>
-            <span className="letter e">E</span>
-            <span className="letter f">F</span>
-            <span className="letter e2">E</span>
-            <span className="letter s">S</span>
-            <span className="letter t">T</span>
-            <span className="year">2K25</span>
-          </h1>
-          <div className="glowing-line"></div>
-        </div>
+        <h1 className="animate-charcter" >
+          <GradientText
+            colors={[
+              "#d4d4d4",
+              "#c0c0c0",
+              "#808080",
+              "#3d3d3d",
+              "#d4d4d4",
+              "#c0c0c0",
+              "#808080",
+              "#3d3d3d",
+            ]}
+            animationSpeed={3}
+            showBorder={false}
+            className="custom-class"
+          >
+            CODEFEST 2K25
+          </GradientText>
+        </h1>
       </section>
-
+      
       {/* Timer Section */}
       <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} />
 
@@ -169,10 +78,8 @@ const Mcode = () => {
       <section ref={aboutSectionRef}>
         <About />
       </section>
-
-      {/* Events Section */}
       <section>
-        <EventToggle/>
+       <EventToggle/>
       </section>
 
       {/* Footer Section */}
