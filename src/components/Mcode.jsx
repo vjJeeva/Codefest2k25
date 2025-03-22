@@ -92,10 +92,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Time from "./Time";
-import NonTechnicalEvents from "./NonTechnicalEvents";
-import TechnicalEvents from "./TechnicalEvents";
 import About from "./About";
 import '../styles/CodeFestTitle.css';
+import EventToggle from "./EventToggle";
 
 const Mcode = () => {
   const [text, setText] = useState("Registration Open");
@@ -173,8 +172,7 @@ const Mcode = () => {
 
       {/* Events Section */}
       <section>
-        <NonTechnicalEvents />
-        <TechnicalEvents />
+        <EventToggle/>
       </section>
 
       {/* Footer Section */}
