@@ -1,21 +1,26 @@
+
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Time from "./Time";
-import NonTechnicalEvents from "./NonTechnicalEvents";
-import TechnicalEvents from "./TechnicalEvents";
 import GradientText from "../../Reactbits/GradientText/GradientText";
+import About from "./About";
+import '../styles/CodeFestTitle.css';
+import EventToggle from "./EventToggle";
 
 const Mcode = () => {
   const [text, setText] = useState("Registration Open");
+  const aboutSectionRef = useRef(null);
+  const footerRef = useRef(null);
+  const titleRef = useRef(null);
+
 
   const reg = () => {
     setText(
       text === "Registration Open" ? "Registration Close" : "Registration Open"
     );
   };
-
   window.addEventListener("scroll", function () {
     const animatedElement = document.querySelector(".animated-element");
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -28,6 +33,7 @@ const Mcode = () => {
     }
   });
 
+
   return (
     <div>
       <Header />
@@ -39,6 +45,9 @@ const Mcode = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          overflow: "hidden",
+          position: "relative",
+          background: "transparent",
         }}
       >
         <h1 className="animate-charcter" >
@@ -61,15 +70,22 @@ const Mcode = () => {
           </GradientText>
         </h1>
       </section>
-      <Time />
+      
+      {/* Timer Section */}
+      <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} />
 
+      {/* About Section */}
+      <section ref={aboutSectionRef}>
+        <About />
+      </section>
       <section>
-        {/* EventCard with EventList */}
-        <NonTechnicalEvents />
-        <TechnicalEvents />
+       <EventToggle/>
       </section>
 
-      <Footer></Footer>
+      {/* Footer Section */}
+      <footer ref={footerRef}>
+        <Footer />
+      </footer>
     </div>
   );
 };
