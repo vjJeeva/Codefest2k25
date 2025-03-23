@@ -35,6 +35,7 @@ const Mcode = () => {
       <Header />
       {/* main sec */}
       <section
+        id="home"
         className="main container"
         style={{
           height: "100vh",
@@ -67,17 +68,23 @@ const Mcode = () => {
       <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} />
 
       {/* About Section */}
-      <section ref={aboutSectionRef}>
+      <section
+      id="about"
+      ref={aboutSectionRef}>
         <About />
       </section>
 
       {/* Events Section */}
-      <section>
+      <section
+      id="events"
+      >
         <EventToggle/>
       </section>
 
       {/* Footer Section */}
-      <footer ref={footerRef}>
+      <footer
+      id="contact"
+      ref={footerRef}>
         <Footer />
       </footer>
     </div>

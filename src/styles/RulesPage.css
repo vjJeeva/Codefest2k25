@@ -1,0 +1,67 @@
+.rules-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px; /* Add margin to avoid overlap with the fixed header */
+}
+
+.rules-page h1 {
+  font-size: 2.5rem;
+  color: #C42ECC;
+  margin-bottom: 20px;
+}
+
+.rules-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.rule-item {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.register-button {
+  background-color: #C42ECC;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #a020a0;
+}
+
+@media (max-width: 768px) {
+  .rules-page {
+    margin-top: 80px; 
+    padding: 15px;
+  }
+
+  .rules-page h1 {
+    font-size: 2rem;
+  }
+
+  .rules-container {
+    padding: 15px;
+  }
+
+  .rule-item {
+    font-size: 1rem;
+  }
+
+  .register-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
