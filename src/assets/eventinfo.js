@@ -21,6 +21,11 @@ const eventinfo = [
       "Final Round: 15 questions in 10 minutes. Highest score wins.",
       "Tie-Breaker Rule: In case of a tie, the final decision will be based on the average scores from all rounds.",
     ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
+    ],
   },
   {
     title: "WebCrafters",
@@ -34,6 +39,11 @@ const eventinfo = [
       "Round 2: Participants can develop their own web app based on any simple and unique idea.",
       "A unique idea will be selected as the winner.",
       "Participants can join individually or in a team of up to two members.",
+    ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
     ],
   },
   {
@@ -49,6 +59,11 @@ const eventinfo = [
       "Each round consists of one question.",
       "Participants can use any programming language they are familiar with.",
     ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
+    ],
   },
   {
     title: "Paper Presentation",
@@ -62,6 +77,11 @@ const eventinfo = [
       "Each team will get 10 minutes for presentation, followed by a Q&A session.",
       "Topics can be chosen by participants, but the presentation should focus on one particular topic.",
       "Participants must bring their PowerPoint presentation on a pendrive or personal laptop.",
+    ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
     ],
   },
   {
@@ -77,6 +97,11 @@ const eventinfo = [
       "Round 3: Participants are given various icons and must identify the original one.",
       "Each question has a 20-second time limit, and participants must find the answer within the given time.",
     ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
+    ],
   },
   {
     title: "Word Tech",
@@ -91,6 +116,11 @@ const eventinfo = [
       "Acronym Backronym Challenge: Participants take common acronyms and creatively expand them into meaningful backronyms.",
       "Each round consists of 10 questions, and the winner is determined based on overall performance across all three rounds.",
     ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
+    ],
   },
   {
     title: "Foot Ball",
@@ -102,6 +132,11 @@ const eventinfo = [
       "Experience the thrill of box cricket in a backyard setting with teams of five players each.",
       "Each team must consist of exactly five members, including fielders and batters.",
       "The game will follow standard box cricket rules, with each team getting a set number of overs to bat and bowl.",
+    ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
     ],
   },
   {
@@ -115,6 +150,11 @@ const eventinfo = [
       "Each team must consist of exactly five members, including fielders and batters.",
       "The game will follow standard box cricket rules, with each team getting a set number of overs to bat and bowl.",
     ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
+    ],
   },
   {
     title: "Backyard Cricket",
@@ -126,6 +166,11 @@ const eventinfo = [
       "Experience the thrill of box cricket in a backyard setting with teams of five players each.",
       "Each team must consist of exactly five members, including fielders and batters.",
       "The game will follow standard box cricket rules, with each team getting a set number of overs to bat and bowl.",
+    ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
     ],
   },
   {
@@ -141,6 +186,11 @@ const eventinfo = [
       "Room codes will be given on the spot.",
       "Decisions will be made fairly; no arguments are allowed against organizers.",
     ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
+    ],
   },
   {
     title: "Go Connection",
@@ -152,6 +202,11 @@ const eventinfo = [
       "Unleash your detective skills in Go Connection, where participants decipher answers by piecing together clues.",
       "Clues will be provided sequentially, and participants must use all given clues to arrive at the correct answer.",
       "Teams or individuals must submit their answers within the specified time limit.",
+    ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
     ],
   },
   {
@@ -165,6 +220,11 @@ const eventinfo = [
       "Clues will be provided sequentially, and participants must use all given clues to arrive at the correct answer.",
       "Teams or individuals must submit their answers within the specified time limit.",
     ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
+    ],
   },
   {
     title: "Power Play",
@@ -176,6 +236,11 @@ const eventinfo = [
       "Unleash your detective skills in Go Connection, where participants decipher answers by piecing together clues.",
       "Clues will be provided sequentially, and participants must use all given clues to arrive at the correct answer.",
       "Teams or individuals must submit their answers within the specified time limit.",
+    ],
+    rules: [
+      "lorem",
+      "something",
+      "tha't all",
     ],
   },
 ];

@@ -1,37 +1,48 @@
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 import "../styles/Header.css";
 
 const Header = () => {
-  const [text, setText] = useState("Registration Open");
-  const [isActive, setIsActive] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleRegistration = () => {
-    setText(text === "Registration Open" ? "Registration Closed" : "Registration Open");
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
-
-  const toggleNav = () => {
-    setIsActive(!isActive);
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
   };
 
   return (
-    <header className="header-container">
-      <div className="header-content container d-flex justify-content-between align-items-center">
-        <h3 className="logo">CODEFEST 2K25</h3>
-        <div className={`nav-menu ${isActive ? "active" : ""}`}>
-          <a href="#">Home</a>
-          <a href="#">Events</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
+    <div className="header-container">
+      <div className="header-content">
+        <div className="logo" data-text="CODEFEST 2K25">
+          CODEFEST 2K25
         </div>
-        <button className="register-btn" onClick={toggleRegistration}>{text}</button>
-        <div className="menu-toggle" onClick={toggleNav}>
+
+        <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
+          <a href="#home" onClick={() => scrollToSection("home")}>Home</a>
+          <a href="#events" onClick={() => scrollToSection("events")}>Events</a>
+          <a href="#about" onClick={() => scrollToSection("about")}>About</a>
+          <a href="#contact" onClick={() => scrollToSection("contact")}>Contact</a>
+        </nav>
+
+        <button
+          className="register-btn"
+          onClick={() => window.open("https://forms.gle/YOUR_GOOGLE_FORM_LINK", "_blank")}
+        >
+          Register
+        </button>
+
+        <div className="menu-toggle" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 
