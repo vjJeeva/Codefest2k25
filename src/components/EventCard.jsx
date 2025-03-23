@@ -21,6 +21,13 @@ const Card3D = ({ event }) => {
     setRotation({ rotateX: 0, rotateY: 0 });
   };
 
+  const handleExploreMore = () => {
+    const rulesPageUrl = `${window.location.origin}/rules?event=${encodeURIComponent(
+      JSON.stringify(event)
+    )}`;
+    window.open(rulesPageUrl, "_blank");
+  };
+
   return (
     <div
       className="card-3d"
@@ -34,15 +41,14 @@ const Card3D = ({ event }) => {
       >
         <div className="card-3d-front">
           <div className="card-3d-image">
-            <img
-              src={event.background}
-              alt="Card Image"
-            />
+            <img src={event.background} alt="Card Image" />
           </div>
           <div className="card-3d-content">
             <h3 className="card-3d-title">{event.title}</h3>
             <p className="card-3d-text">{event.points[0]}</p>
-            <button className="card-3d-button">Explore More</button>
+            <button className="card-3d-button" onClick={handleExploreMore}>
+              Explore More
+            </button>
           </div>
           <div className="corner-glow corner-glow-top-left"></div>
           <div className="corner-glow corner-glow-top-right"></div>
