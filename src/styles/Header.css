@@ -1,10 +1,11 @@
 .header-container {
-  position: fixed; 
-  left: 13px; 
+  position: fixed;
+  top: 30px;
+  left: 13px;
   width: 98%;
   z-index: 999;
   padding: 15px 20px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e,0.5);
+  background: linear-gradient(135deg, #1a1a2e, #16213e, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -33,7 +34,6 @@
   transform: scale(1.1);
 }
 
-/* Glitch Effect - Only X-Axis */
 @keyframes glitch-x {
   0% {
     text-shadow: 3px 0px 0px #ff007f, -3px 0px 0px #2a01f5;
@@ -57,7 +57,6 @@
   }
 }
 
-/* Flickering Effect */
 @keyframes flicker {
   0%, 100% {
     opacity: 1;
@@ -67,7 +66,6 @@
   }
 }
 
-/* RGB Split Effect */
 .logo::before,
 .logo::after {
   content: attr(data-text);
@@ -88,7 +86,6 @@
   transform: translateX(2px);
   z-index: -1;
 }
-
 
 .nav-menu {
   display: flex;
