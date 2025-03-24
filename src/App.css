@@ -20,6 +20,9 @@ body {
     background-position: 200% center;
   }
 }
+  .animate-charcter{
+    font-size: 50px !important;
+  }
 
 @media screen and (min-width: 998px) {
   .animate-charcter{
