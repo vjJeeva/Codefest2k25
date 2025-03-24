@@ -10,20 +10,20 @@ const Time = ({ aboutSectionRef, footerRef }) => {
 
   // Update countdown timer
   useEffect(() => {
-    const targetDate = new Date("2025-04-04T23:59:59");
-
+    const targetDate = new Date("2025-04-04T09:00:00");
+  
     const updateCountdown = () => {
       const now = new Date();
       const timeDifference = targetDate - now;
-
+  
       setTime({
-        days: Math.floor(timeDifference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((timeDifference % (1000 * 60)) / 1000),
+        days: Math.max(0, Math.floor(timeDifference / (1000 * 60 * 60 * 24))),
+        hours: Math.max(0, Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
+        minutes: Math.max(0, Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))),
+        seconds: Math.max(0, Math.floor((timeDifference % (1000 * 60)) / 1000)),
       });
     };
-
+  
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
@@ -97,12 +97,14 @@ const Time = ({ aboutSectionRef, footerRef }) => {
       {/* Sticky Timer */}
       <div className={`sticky-timer ${isSticky ? "show" : ""}`}>
         <div className="d-flex">
-          {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
-            <div key={index}>
-              <div><p>{time[unit.toLowerCase()]}</p></div>
-              <p>{unit}</p>
-            </div>
-          ))}
+        {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
+  time[unit.toLowerCase()] > 0 && ( // Check if the value is positive
+    <div key={index}>
+      <div><p>{time[unit.toLowerCase()]}</p></div>
+      <p>{unit}</p>
+    </div>
+  )
+))}
         </div>
       </div>
     </>
