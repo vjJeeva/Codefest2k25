@@ -3,21 +3,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Header.css";
 
 const Header = () => {
-  const [text, setText] = useState("Registration Open");
+  const [text, setText] = useState("Registration");
   const [isActive, setIsActive] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Toggle registration button text
-  const toggleRegistration = () => {
-    setText(text === "Registration Open" ? "Registration Closed" : "Registration Open");
+  
+  const handleRegister = () => {
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdKku886Omny2C4owkq1xBub4ss1fD-CHH8mQYCPwUNjwNT3A/viewform?usp=dialog", "_blank");
   };
 
-  // Toggle mobile navigation menu
+  
   const toggleNav = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Smooth scrolling to sections
+  
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -31,7 +31,7 @@ const Header = () => {
       <div className="header-content container d-flex justify-content-between align-items-center">
         <h3 className="logo">CODEFEST 2K25</h3>
 
-        {/* Navigation Menu */}
+       
         <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
           <a href="#home" onClick={() => scrollToSection("home")}>Home</a>
           <a href="#about" onClick={() => scrollToSection("about")}>About</a>
@@ -40,10 +40,10 @@ const Header = () => {
 
         </nav>
 
-        {/* Registration Button */}
-        <button className="register-btn" onClick={toggleRegistration}>{text}</button>
+      
+        <button className="register-btn" onClick={handleRegister}>{text}</button>
 
-        {/* Mobile Menu Toggle Button */}
+        
         <div className="menu-toggle" onClick={toggleNav}>
           <span></span>
           <span></span>

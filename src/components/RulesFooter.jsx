@@ -28,8 +28,8 @@ const RulesFooter = () => {
 
         <div className="code-footer-right">
           <div className="code-footer-nav">
-            <a href="/events" className="code-nav-link">Events</a>
-            <a href="/contact" className="code-nav-link">Contact</a>
+            <a href="" className="code-nav-link">Events</a>
+            <a href="" className="code-nav-link">Contact</a>
           </div>
         </div>
       </div>
