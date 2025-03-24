@@ -260,12 +260,18 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .animate-item.show {
   opacity: 1;
   transform: translateY(0);
 }
+.highlight{
+  color: #f764ff;
+}
+
 
 /* Animations */
 @keyframes fadeIn {
@@ -325,3 +331,5 @@
     font-size: 1.5rem;
   }
 }
+
+

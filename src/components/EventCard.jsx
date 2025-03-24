@@ -24,8 +24,9 @@ const Card3D = ({ event }) => {
   const handleExploreMore = () => {
     const eventData = encodeURIComponent(JSON.stringify(event));
     const rulesPageUrl = `${window.location.origin}/rules?event=${eventData}`;
-    window.open(rulesPageUrl, "_blank");
-  };
+    window.location.href = rulesPageUrl;
+};
+
 
   return (
     <div

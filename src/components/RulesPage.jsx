@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "../styles/RulesPage.css";
 import Header from "./Header.jsx";
+import RulesFooter from "./RulesFooter.jsx";
+
 
 const RulesPage = () => {
   const [searchParams] = useSearchParams();
-  const [event, setEvent] = useState({}); // State to store event data
+  const [event, setEvent] = useState({});
   const [activeTab, setActiveTab] = useState("description");
   const [animatedItems, setAnimatedItems] = useState([]);
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
-  // Parse event data from URL
   useEffect(() => {
     try {
       const eventParam = searchParams.get("event");
@@ -22,7 +24,6 @@ const RulesPage = () => {
     }
   }, [searchParams]);
 
-  // Animation effect for items to appear one by one
   useEffect(() => {
     const items = document.querySelectorAll(".animate-item");
 
@@ -34,13 +35,15 @@ const RulesPage = () => {
         }, delay);
         delay += 150;
       });
+      // Triggering the description animation after a delay
+      setIsDescriptionVisible(true); 
     }, 300);
 
     return () => clearTimeout(animationTimeout);
-  }, [activeTab]); // Reset animation when tab changes
+  }, [activeTab]); 
 
   const handleRegister = () => {
-    window.open("https://forms.gle/YOUR_GOOGLE_FORM_LINK", "_blank");
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdKku886Omny2C4owkq1xBub4ss1fD-CHH8mQYCPwUNjwNT3A/viewform?usp=dialog", "_blank");
   };
 
   return (
@@ -74,7 +77,11 @@ const RulesPage = () => {
             {activeTab === "description" && (
               <div className="description-section">
                 <div className="description-content">
-                  <p className="animate-item description-text">
+                  <p
+                    className={`animate-item description-text ${
+                      isDescriptionVisible ? "show" : ""
+                    }`}
+                  >
                     The <span className="highlight">Project Contest</span> is a
                     technical event where participants showcase innovative
                     projects that solve real-world problems using technology.
@@ -164,6 +171,10 @@ const RulesPage = () => {
           </button>
         </div>
       </div>
+
+
+<RulesFooter/>
+
     </>
   );
 };
