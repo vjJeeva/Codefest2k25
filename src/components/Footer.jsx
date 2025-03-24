@@ -20,11 +20,11 @@ const Footer = () => {
   return (
     <footer className="footer-wrapper" data-aos="fade-up">
       <div className="container">
-        <div className="footer-content d-flex flex-wrap justify-content-between">
+        <div className="footer-content">
           {/* Left Section */}
           <div className="footer-section">
             <h3 className="footer-logo">CODEFEST 2K25</h3>
-            <p>
+            <p className="footer-description">
               Dive into the world of technology and innovation. Join us on this thrilling journey!
             </p>
           </div>
@@ -43,13 +43,28 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="footer-section">
             <h3 className="footer-header">Contact Us</h3>
-            <p>G.S.T Road, Chinna Kolambakkam,</p>
-            <p>Madhuranthagam (T.k), Chengalpattu (D.t)-603308</p>
-            <p><IoMail className="contact-icon" /> support@codefest2k25.com</p>
+            <p className="footer-contact">G.S.T Road, Chinna Kolambakkam,</p>
+            <p className="footer-contact">Madhuranthagam (T.k), Chengalpattu (D.t)-603308</p>
+            <p className="footer-contact"><IoMail className="contact-icon" /> support@codefest2k25.com</p>
           </div>
 
-          {/* Social Media */}
+        
+
+          {/* Our Team */}
           <div className="footer-section">
+            <h3 className="footer-header">Our Team</h3>
+            <div className="team-info">
+              <p className="team-label">Developed By</p>
+              <p className="team-name">Jeeva P</p>
+              <p className="team-name">Jeeva V</p>
+              <p className="team-label">Designed By</p>
+              <p className="team-name">Arjun Aadhith BS</p>
+            </div>
+          </div>
+        </div>
+
+  {/* Social Media */}
+  <div className="footer-section">
             <h3 className="footer-header">Follow Us</h3>
             <div className="social-icons">
               <a href="https://www.instagram.com/codefest_2k25" target="_blank" rel="noopener noreferrer">
@@ -66,11 +81,10 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <p>© 2025 CODEFEST 2K25. All rights reserved.</p>
+          <p>© CODEFEST 2K25. All rights reserved.</p>
         </div>
       </div>
     </footer>
