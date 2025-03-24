@@ -10,21 +10,21 @@ import {
 const eventinfo = [
   {
     title: "InnovQuiz",
+    subtitle:"Innovquiz",
     type: "Technical",
     background: Freefire,
     date: "4th APR '25 - 10am",
     realname: "Quizzie",
     points: [
-      "This event will consist of multiple-choice and coding questions based on Python, Java, C, Data Structures & Algorithms (DSA), and Database Management Systems (DBMS).",
-      "Round 1: 10 questions in 10 minutes. Top 50% advance.",
-      "Round 2: 10 questions in 10 minutes. Top 50% qualify for the final round.",
-      "Final Round: 15 questions in 10 minutes. Highest score wins.",
-      "Tie-Breaker Rule: In case of a tie, the final decision will be based on the average scores from all rounds.",
+      "This event will consist of multiple-choice and coding questions.",
+      "Round 1: 10 questions in 10 minutes.",
+      "Round 2: 10 questions in 10 minutes.",
+      "Final Round: 15 questions in 10 minutes.",
     ],
     rules: [
-      "lorem",
-      "something",
-      "tha't all",
+      "Rule 1: Lorem ipsum dolor sit amet.",
+      "Rule 2: Consectetur adipiscing elit.",
+      "Rule 3: Sed do eiusmod tempor incididunt.",
     ],
   },
   {

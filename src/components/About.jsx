@@ -5,7 +5,6 @@ import "../styles/About.css";
 
 const About = React.forwardRef((props, ref) => {
   useEffect(() => {
-    // Initialize AOS with enhanced settings
     AOS.init({ 
       duration: 1200, 
       once: false,
@@ -13,18 +12,13 @@ const About = React.forwardRef((props, ref) => {
       easing: 'ease-out-cubic'
     });
     
-    // Create digital particles effect
     const aboutSection = document.querySelector('.about-section');
     if (aboutSection) {
       for (let i = 0; i < 20; i++) {
         const particle = document.createElement('div');
         particle.classList.add('digital-particle');
-        
-        // Random positioning
         particle.style.left = Math.random() * 100 + '%';
         particle.style.top = Math.random() * 100 + '%';
-        
-        // Random delay for animation
         particle.style.animationDelay = (Math.random() * 10) + 's';
         
         aboutSection.appendChild(particle);
@@ -38,8 +32,6 @@ const About = React.forwardRef((props, ref) => {
         data-aos="fade-up"
         data-aos-duration="1200"
         className="About-Title">About</h1>
-      
-      {/* College Details Section - Image on LEFT, Content on RIGHT */}
       <div className="about-container">
         <img
           src="kvcet_logo.png"
@@ -61,8 +53,6 @@ const About = React.forwardRef((props, ref) => {
           </p>
         </div>
       </div>
-      
-      {/* Symposium Details Section - Image on RIGHT, Content on LEFT */}
       <div className="about-container">
         <div 
           className="about-text" 
