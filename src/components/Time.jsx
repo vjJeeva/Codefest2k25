@@ -10,20 +10,20 @@ const Time = ({ aboutSectionRef, footerRef }) => {
 
   // Update countdown timer
   useEffect(() => {
-    const targetDate = new Date("2025-03-27T23:59:59");
-
+    const targetDate = new Date("2025-04-04T09:00:00");
+  
     const updateCountdown = () => {
       const now = new Date();
       const timeDifference = targetDate - now;
-
+  
       setTime({
-        days: Math.floor(timeDifference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((timeDifference % (1000 * 60)) / 1000),
+        days: Math.max(0, Math.floor(timeDifference / (1000 * 60 * 60 * 24))),
+        hours: Math.max(0, Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
+        minutes: Math.max(0, Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))),
+        seconds: Math.max(0, Math.floor((timeDifference % (1000 * 60)) / 1000)),
       });
     };
-
+  
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
@@ -66,23 +66,28 @@ const Time = ({ aboutSectionRef, footerRef }) => {
       {/* Main Timer */}
       <div
         ref={mainTimerRef}
-        className="time-container"
+        className="time-container d-flex justify-content-center"
         style={{
-          opacity: isMainTimerVisible ? 1 : 0, // Fade in/out
-          transition: "opacity 0.5s ease", // Smooth transition
-          height: "100vh"
+          // opacity: isMainTimerVisible ? 1 : 0, // Fade in/out
+          // transition: "opacity 0.5s ease", // Smooth transition
+          
         }}
       >
         <section className="time d-flex justify-content-center align-items-center">
           <div data-aos="fade-up" data-aos-duration="1000" className="container text-center">
             <h1>Act fast! Join us now!</h1>
             <div className="d-flex justify-content-center gap-5">
-              {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
-                <div key={index}>
-                  <div><p>{time[unit.toLowerCase()]}</p></div>
-                  <p>{unit}</p>
-                </div>
-              ))}
+            {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
+  <div
+    key={index}
+    className={unit === "Seconds" ? "seconds-container" : ""}
+  >
+    <div>
+      <p>{time[unit.toLowerCase()]}</p>
+    </div>
+    <p>{unit}</p>
+  </div>
+))}
             </div>
             <div><a href="#">Register Now</a></div>
           </div>
@@ -92,12 +97,14 @@ const Time = ({ aboutSectionRef, footerRef }) => {
       {/* Sticky Timer */}
       <div className={`sticky-timer ${isSticky ? "show" : ""}`}>
         <div className="d-flex">
-          {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
-            <div key={index}>
-              <div><p>{time[unit.toLowerCase()]}</p></div>
-              <p>{unit}</p>
-            </div>
-          ))}
+        {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
+  time[unit.toLowerCase()] > 0 && ( // Check if the value is positive
+    <div key={index}>
+      <div><p>{time[unit.toLowerCase()]}</p></div>
+      <p>{unit}</p>
+    </div>
+  )
+))}
         </div>
       </div>
     </>
