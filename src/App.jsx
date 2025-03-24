@@ -8,10 +8,12 @@ import RulesPage from "./components/RulesPage.jsx";
 import Background from './components/Background.jsx'
 import './App.css'
 import EventToggle from "./components/EventToggle.jsx";
+import CustomMouse from "./components/CustomMouse.jsx";
 
 function App() {
   return (
     <>
+    <CustomMouse/>
     <Background/>
     <Router>
       <Header />

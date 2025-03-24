@@ -22,7 +22,6 @@ const Mcode = () => {
     const animatedElement = document.querySelector(".animated-element");
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    // Pause the animation when scrolling
     if (scrollTop > 0) {
       animatedElement.style.animationPlayState = "paused";
     } else {
@@ -33,7 +32,6 @@ const Mcode = () => {
   return (
     <div>
       <Header />
-      {/* main sec */}
       <section
         id="home"
         className="main container"
