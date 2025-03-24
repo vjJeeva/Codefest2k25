@@ -37,6 +37,7 @@ const Header = () => {
           <a href="#about" onClick={() => scrollToSection("about")}>About</a>
           <a href="#events" onClick={() => scrollToSection("events")}>Events</a>
           <a href="#contact" onClick={() => scrollToSection("contact")}>Contact</a>
+
         </nav>
 
         {/* Registration Button */}
