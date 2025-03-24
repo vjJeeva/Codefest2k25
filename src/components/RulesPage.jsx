@@ -5,7 +5,17 @@ import Header from "./Header.jsx";
 
 const RulesPage = () => {
   const [searchParams] = useSearchParams();
-  const event = JSON.parse(decodeURIComponent(searchParams.get("event")));
+  let event = null;
+
+  try {
+    const eventParam = searchParams.get("event");
+    if (eventParam) {
+      event = JSON.parse(decodeURIComponent(eventParam));
+    }
+  } catch (error) {
+    console.error("Error parsing event data:", error);
+    return <div>Error loading event details. Please try again.</div>;
+  }
 
   if (!event) {
     return <div>No event data found.</div>;
@@ -17,20 +27,20 @@ const RulesPage = () => {
 
   return (
     <>
-    <Header/>
-    <div className="rules-page">
-      <h1>{event.title} Rules</h1>
-      <div className="rules-container">
-        {event.rules.map((rule, index) => (
-          <p key={index} className="rule-item">
-            {rule}
-          </p>
-        ))}
+      <Header />
+      <div className="rules-page">
+        <h1>{event.title} Rules</h1>
+        <div className="rules-container">
+          {event.rules.map((rule, index) => (
+            <p key={index} className="rule-item">
+              {rule}
+            </p>
+          ))}
+        </div>
+        <button className="register-button" onClick={handleRegister}>
+          Register Now
+        </button>
       </div>
-      <button className="register-button" onClick={handleRegister}>
-        Register Now
-      </button>
-    </div>
     </>
   );
 };
