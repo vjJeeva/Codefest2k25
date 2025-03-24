@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "../styles/RulesPage.css";
 import Header from "./Header.jsx";
+import RulesFooter from "./RulesFooter.jsx";
+
 
 const RulesPage = () => {
   const [searchParams] = useSearchParams();
@@ -169,6 +171,10 @@ const RulesPage = () => {
           </button>
         </div>
       </div>
+
+
+<RulesFooter/>
+
     </>
   );
 };

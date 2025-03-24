@@ -1,92 +1,163 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-  }
-  
-  .footer-wrapper {
-    background: rgba(63, 63, 63, 0.31);
-    backdrop-filter: blur(2px);
-    padding: 40px 0;
-    color: #fff;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-  
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-wrapper {
+  background: rgba(63, 63, 63, 0.31);
+  backdrop-filter: blur(2px);
+  padding: 25px 0;
+  color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 15px;
+  row-gap: 30px;
+}
+
+.footer-section {
+  width: 100%;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff10f0;
+  margin-bottom: 6px;
+}
+
+.footer-description {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.footer-header {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-header::after {
+  content: "";
+  width: 40%;
+  height: 2px;
+  background: #ff10f0;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  cursor: pointer;
+  padding: 3px 0;
+  font-size: 13px;
+  transition: 0.3s ease-in-out;
+}
+
+.footer-links li:hover {
+  color: #ff10f0;
+}
+
+.footer-contact {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.contact-icon {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.social-icons a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff10f0;
+}
+
+/* Team Info Styling */
+.team-info {
+  margin-top: 5px;
+}
+
+.team-label {
+  font-size: 13px;
+  color: #ccc;
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+.team-name {
+  margin: 0;
+  padding: 2px 0;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.team-name:hover {
+  color: #ff10f0;
+  transform: translateX(5px);
+  text-shadow: 0 0 5px rgba(255, 16, 240, 0.5);
+}
+
+/* Footer Bottom with line above */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  position: relative;
+  padding-top: 15px;
+}
+
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 16, 240, 0.5), transparent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
   .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 220px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .footer-logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #ff10f0;
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    grid-template-columns: 1fr;
   }
-  
-  .footer-header {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    position: relative;
-  }
-  
-  .footer-header::after {
-    content: "";
-    width: 40%;
-    height: 2px;
-    background: #ff10f0;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-links li {
-    cursor: pointer;
-    padding: 5px 0;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .footer-links li:hover {
-    color: #ff10f0;
-  }
-  
-  .contact-icon {
-    margin-right: 8px;
-    vertical-align: middle;
-  }
-  
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    font-size: 22px;
-  }
-  
-  .social-icons a {
-    color: #fff;
-    transition: 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #ff10f0;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 14px;
-  }
-  
+}
