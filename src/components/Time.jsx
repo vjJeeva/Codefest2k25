@@ -70,6 +70,7 @@ const Time = ({ aboutSectionRef, footerRef }) => {
         style={{
           opacity: isMainTimerVisible ? 1 : 0, // Fade in/out
           transition: "opacity 0.5s ease", // Smooth transition
+          height: "100vh"
         }}
       >
         <section className="time d-flex justify-content-center align-items-center">

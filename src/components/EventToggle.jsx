@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TechnicalEvents from "./TechnicalEvents";
 import NonTechnicalEvents from "./NonTechnicalEvents";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/EventToggle.css";
 
 const EventToggle = () => {
@@ -25,8 +26,10 @@ const EventToggle = () => {
         }}
       >
         <div className={`toggle-slider ${isTechnical ? "technical" : "non-technical"}`}></div>
-        <span className="toggle-text technical-text">Technical</span>
-        <span className="toggle-text non-technical-text">Non-Technical</span>
+       <div>
+       <span className="toggle-text technical-text">Technical</span>
+       <span className="toggle-text non-technical-text">Non-Technical</span>
+       </div>
       </div>
       <div className="events-container">
         {isTechnical ? <TechnicalEvents /> : <NonTechnicalEvents />}
