@@ -4,18 +4,17 @@ import "../styles/time.css";
 
 const Time = ({ aboutSectionRef, footerRef }) => {
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [isSticky, setIsSticky] = useState(false);
-  const [isMainTimerVisible, setIsMainTimerVisible] = useState(true); // State to control main timer visibility
-  const mainTimerRef = useRef(null); // Ref for the main timer section
+  const mainTimerRef = useRef(null);
+  const [particles, setParticles] = useState([]);
 
   // Update countdown timer
   useEffect(() => {
     const targetDate = new Date("2025-04-04T09:00:00");
-  
+    
     const updateCountdown = () => {
       const now = new Date();
       const timeDifference = targetDate - now;
-  
+      
       setTime({
         days: Math.max(0, Math.floor(timeDifference / (1000 * 60 * 60 * 24))),
         hours: Math.max(0, Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
@@ -23,91 +22,135 @@ const Time = ({ aboutSectionRef, footerRef }) => {
         seconds: Math.max(0, Math.floor((timeDifference % (1000 * 60)) / 1000)),
       });
     };
-  
+    
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  // Handle scroll events
+  // Generate floating code particles
   useEffect(() => {
-    const handleScroll = () => {
-      const mainTimer = mainTimerRef.current;
-      const aboutSection = aboutSectionRef.current;
-      const footer = footerRef.current;
-
-      if (mainTimer && aboutSection && footer) {
-        const mainTimerBottom = mainTimer.getBoundingClientRect().bottom;
-        const aboutSectionTop = aboutSection.getBoundingClientRect().top;
-        const footerTop = footer.getBoundingClientRect().top;
-
-        // Hide main timer when about section comes into view
-        if (aboutSectionTop <= window.innerHeight) {
-          setIsMainTimerVisible(false); // Fade out main timer
-        } else {
-          setIsMainTimerVisible(true); // Fade in main timer
-        }
-
-        // Show sticky timer when main timer is out of view and stop it above the footer
-        if (mainTimerBottom < 0 && footerTop > window.innerHeight) {
-          setIsSticky(true);
-        } else {
-          setIsSticky(false);
-        }
+    const generateParticles = () => {
+      const codeSymbols = [
+        "{}", "[]", "<>", "//", "&&", "||", "==", "+=", "=>", 
+        "if", "for", "let", "var", "int", "def", "class", "=>",
+        "0101", "1010", "function", "return", "import", "export"
+      ];
+      
+      const newParticles = [];
+      const particleCount = window.innerWidth < 768 ? 15 : 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        newParticles.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * (1.5 - 0.8) + 0.8,
+          opacity: Math.random() * (0.7 - 0.2) + 0.2,
+          speed: Math.random() * (1.5 - 0.5) + 0.5,
+          text: codeSymbols[Math.floor(Math.random() * codeSymbols.length)],
+          delay: Math.random() * 5
+        });
       }
+      
+      setParticles(newParticles);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    generateParticles();
+    window.addEventListener('resize', generateParticles);
+    
+    return () => {
+      window.removeEventListener('resize', generateParticles);
+    };
   }, []);
 
-  return (
-    <>
-      {/* Main Timer */}
-      <div
-        ref={mainTimerRef}
-        className="time-container d-flex justify-content-center"
-        style={{
-          // opacity: isMainTimerVisible ? 1 : 0, // Fade in/out
-          // transition: "opacity 0.5s ease", // Smooth transition
-          
-        }}
-      >
-        <section className="time d-flex justify-content-center align-items-center">
-          <div data-aos="fade-up" data-aos-duration="1000" className="container text-center">
-            <h1>Act fast! Join us now!</h1>
-            <div className="d-flex justify-content-center gap-5">
-            {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
-  <div
-    key={index}
-    className={unit === "Seconds" ? "seconds-container" : ""}
-  >
-    <div>
-      <p>{time[unit.toLowerCase()]}</p>
-    </div>
-    <p>{unit}</p>
-  </div>
-))}
-            </div>
-            <div><a href="#">Register Now</a></div>
-          </div>
-        </section>
-      </div>
+  // Format number to always have two digits
+  const formatNumber = (num) => {
+    return num.toString().padStart(2, '0');
+  };
 
-      {/* Sticky Timer */}
-      <div className={`sticky-timer ${isSticky ? "show" : ""}`}>
-        <div className="d-flex">
-        {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
-  time[unit.toLowerCase()] > 0 && ( // Check if the value is positive
-    <div key={index}>
-      <div><p>{time[unit.toLowerCase()]}</p></div>
-      <p>{unit}</p>
-    </div>
-  )
-))}
-        </div>
+  return (
+    <div
+      ref={mainTimerRef}
+      className="time-container d-flex justify-content-center align-items-center"
+    >
+      <div className="floating-code-particles">
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="code-particle"
+            style={{
+              left: `${particle.x}%`,
+              top: `${particle.y}%`,
+              fontSize: `${particle.size}rem`,
+              opacity: particle.opacity,
+              animationDuration: `${30 / particle.speed}s`,
+              animationDelay: `${particle.delay}s`
+            }}
+          >
+            {particle.text}
+          </div>
+        ))}
       </div>
-    </>
+      
+      <div className="blur-layer"></div>
+      
+      <section className="time d-flex justify-content-center align-items-center">
+        <div className="matrix-rain"></div>
+        
+        <div 
+          data-aos="fade-up" 
+          data-aos-duration="1000" 
+          className="container text-center countdown-container"
+        >
+          <div className="glitch-wrapper">
+            <h1 className="countdown-title" data-text="CODEFEST 2K25">
+              CODEFEST <span className="year-highlight">2K25</span>
+            </h1>
+          </div>
+          
+          <div className="binary-subtitle">
+            <p className="countdown-subtitle">
+              <span className="binary-bit">{'<'}</span> EVENT STARTS IN <span className="binary-bit">{'>'}</span>
+            </p>
+          </div>
+          
+          <div className="countdown-wrapper">
+            {[
+              { unit: "Days", value: time.days },
+              { unit: "Hours", value: time.hours },
+              { unit: "Minutes", value: time.minutes },
+              { unit: "Seconds", value: time.seconds }
+            ].map((item, index) => (
+              <div key={index} className="countdown-item">
+                <div className="countdown-value">
+                  <div className="digit-flip-card">
+                    <span className="countdown-digit">{formatNumber(item.value)}</span>
+                    <div className="digit-reflection"></div>
+                  </div>
+                  <div className="circuit-lines"></div>
+                </div>
+                <span className="countdown-label">{item.unit}</span>
+                {index < 3 && <span className="countdown-separator">:</span>}
+              </div>
+            ))}
+          </div>
+          
+          <div className="register-button-container">
+            <a href="#" className="register-button">
+              <span className="button-text">{'<'} REGISTER NOW {'>'}</span>
+              <span className="button-flash"></span>
+              <div className="button-circuit-lines"></div>
+            </a>
+          </div>
+          
+          <div className="tech-decorations">
+            <div className="cpu-decoration left"></div>
+            <div className="cpu-decoration right"></div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
