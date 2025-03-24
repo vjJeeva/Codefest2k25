@@ -8,7 +8,6 @@ function NonTechnicalEvents() {
 
   return (
     <div className="events-container">
-      <h2>Non-Technical Events</h2>
       <div className="events-grid">
         {nonTechnicalEvents.map(event => (
           <EventCard key={event.title} event={event} />
