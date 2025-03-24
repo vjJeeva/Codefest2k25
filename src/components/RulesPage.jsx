@@ -11,6 +11,7 @@ const RulesPage = () => {
   const [activeTab, setActiveTab] = useState("description");
   const [animatedItems, setAnimatedItems] = useState([]);
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+
   useEffect(() => {
     try {
       const eventParam = searchParams.get("event");
