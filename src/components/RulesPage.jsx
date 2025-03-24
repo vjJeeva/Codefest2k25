@@ -8,6 +8,7 @@ const RulesPage = () => {
   const [event, setEvent] = useState({}); // State to store event data
   const [activeTab, setActiveTab] = useState("description");
   const [animatedItems, setAnimatedItems] = useState([]);
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false); // For triggering the description animation
 
   // Parse event data from URL
   useEffect(() => {
@@ -34,6 +35,8 @@ const RulesPage = () => {
         }, delay);
         delay += 150;
       });
+      // Triggering the description animation after a delay
+      setIsDescriptionVisible(true); 
     }, 300);
 
     return () => clearTimeout(animationTimeout);
@@ -74,7 +77,11 @@ const RulesPage = () => {
             {activeTab === "description" && (
               <div className="description-section">
                 <div className="description-content">
-                  <p className="animate-item description-text">
+                  <p
+                    className={`animate-item description-text ${
+                      isDescriptionVisible ? "show" : ""
+                    }`}
+                  >
                     The <span className="highlight">Project Contest</span> is a
                     technical event where participants showcase innovative
                     projects that solve real-world problems using technology.
