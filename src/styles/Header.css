@@ -92,7 +92,7 @@
 
 .nav-menu {
   display: flex;
-  gap: 25px;
+  gap: 45px;
   transition: transform 0.4s ease-in-out;
 }
 
