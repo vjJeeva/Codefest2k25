@@ -267,6 +267,7 @@
   transform: translateY(0);
 }
 
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
