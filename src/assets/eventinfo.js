@@ -10,6 +10,7 @@ import {
 const eventinfo = [
   {
     title: "InnovQuiz",
+    subtitle:"Innovquiz",
     type: "Technical",
     background: Freefire,
     date: "4th APR '25 - 10am",
