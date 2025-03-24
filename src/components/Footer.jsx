@@ -17,11 +17,11 @@ const Footer = () => {
   };
 
   return (
-    <section className="footer-wrapper">
-      <div className="container p-5">
+    <section className="footer-wrapper"  data-aos="fade-up">
+      <div className="container ps-4 ps-lg-1">
         <div className="d-lg-flex justify-content-between">
-          <div className="f-name">
-            <h3>CODEFEST 2K25</h3>
+          <div className="f-name ">
+            <h3 className="logo">CODEFEST 2K25</h3>
             <p>
               <span className="d-block">
                 Dive into the world of technology and innovation{" "}
@@ -30,15 +30,15 @@ const Footer = () => {
             </p>
           </div>
           <div className="f-sub-name">
-            <h3>Quick Links</h3>
-            <p onClick={() => scrollToSection("home")}>Home</p>
-            <p onClick={() => scrollToSection("about")}>About Us</p>
-            <p onClick={() => scrollToSection("events")}>Events</p>
-            <p onClick={() => scrollToSection("contact")}>Contact</p>
+            <h3 className="f-sub-header">Quick Links</h3>
+            <p className="q-links" onClick={() => scrollToSection("home")}>Home</p>
+            <p className="q-links" onClick={() => scrollToSection("about")}>About Us</p>
+            <p className="q-links" onClick={() => scrollToSection("events")}>Events</p>
+            <p className="q-links" onClick={() => scrollToSection("contact")}>Contact</p>
           </div>
 
           <div className="f-sub-name">
-            <h3>Contact Us</h3>
+            <h3 className="f-sub-header">Contact Us</h3>
             <p>
               <span className="d-block">G.S.T Road, Chinna Kolambakkam,</span>
               <span className="d-block"> Madhuranthagam(T.k), </span>{" "}
@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="f-sub-name">
-            <h3>More Details</h3>
+            <h3 className="f-sub-header">More Details</h3>
             <p>Developers</p>
           </div>
         </div>
