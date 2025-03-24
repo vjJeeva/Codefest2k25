@@ -18,12 +18,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer-wrapper" data-aos="fade-up">
+    <footer className="footer-wrapper">
       <div className="container">
         <div className="footer-content">
           {/* Left Section */}
           <div className="footer-section">
-            <h3 className="footer-logo">CODEFEST 2K25</h3>
+            <h2 className="footer-logo">CODEFEST 2K25</h2>
             <p className="footer-description">
               Dive into the world of technology and innovation. Join us on this thrilling journey!
             </p>
@@ -43,44 +43,52 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="footer-section">
             <h3 className="footer-header">Contact Us</h3>
-            <p className="footer-contact">G.S.T Road, Chinna Kolambakkam,</p>
-            <p className="footer-contact">Madhuranthagam (T.k), Chengalpattu (D.t)-603308</p>
-            <p className="footer-contact"><IoMail className="contact-icon" /> support@codefest2k25.com</p>
+            <p className="footer-contact">
+              <FaMapMarkerAlt className="contact-icon" />
+              G.S.T Road, Chinna Kolambakkam,
+            </p>
+            <p className="footer-contact">
+              Madhuranthagam (T.k), Chengalpattu (D.t)-603308
+            </p>
+            <p className="footer-contact">
+              <IoMail className="contact-icon" /> support@codefest2k25.com
+            </p>
           </div>
-
-        
 
           {/* Our Team */}
           <div className="footer-section">
             <h3 className="footer-header">Our Team</h3>
             <div className="team-info">
               <p className="team-label">Developed By</p>
-              <p className="team-name">Jeeva P</p>
-              <p className="team-name">Jeeva V</p>
+              <span className="team-name">Jeeva P</span>
+              <span className="team-name">Jeeva V</span>
+              
               <p className="team-label">Designed By</p>
-              <p className="team-name">Arjun Aadhith BS</p>
+              <span className="team-name">Arjun Aadhith BS</span>
+            </div>
+          </div>
+
+          {/* Social Media */}
+          <div className="footer-section">
+            <h3 className="footer-header">Follow Us</h3>
+            <div className="social-icons">
+              <a href="https://www.instagram.com/codefest_2k25" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <a href="https://www.facebook.com/KarpagaVinayagaCollegeOfEngineeringAndTechnology" aria-label="Facebook">
+                <FaFacebookF />
+              </a>
+              <a href="https://www.linkedin.com/school/karpaga-vinayaga-college-of-engineering-and-technology/" aria-label="LinkedIn">
+                <FaLinkedinIn />
+              </a>
+              <a>
+              <a href="https://maps.app.goo.gl/5EV59h55KDJEaFqF7" aria-label="Location">
+                  <FaMapMarkerAlt/>
+                </a>
+              </a>
             </div>
           </div>
         </div>
-
-  {/* Social Media */}
-  <div className="footer-section">
-            <h3 className="footer-header">Follow Us</h3>
-            <div className="social-icons">
-              <a href="https://www.instagram.com/codefest_2k25" target="_blank" rel="noopener noreferrer">
-                <FaInstagram />
-              </a>
-              <a href="https://www.facebook.com/KarpagaVinayagaCollegeOfEngineeringAndTechnology" target="_blank" rel="noopener noreferrer">
-                <FaFacebookF />
-              </a>
-              <a href="https://www.linkedin.com/school/karpaga-vinayaga-college-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer">
-                <FaLinkedinIn />
-              </a>
-              <a href="https://goo.gl/maps/YOUR_MAP_LINK" target="_blank" rel="noopener noreferrer">
-                <FaMapMarkerAlt />
-              </a>
-            </div>
-          </div>
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
