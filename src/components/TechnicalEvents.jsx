@@ -8,7 +8,6 @@ function TechnicalEvents() {
 
   return (
     <div className="events-container">
-      <h2>Technical Events</h2>
       <div className="events-grid">
         {TechnicalEvents.map(event => (
           <EventCard key={event.title} event={event} />
