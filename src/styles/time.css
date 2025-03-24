@@ -2,7 +2,8 @@
 .time {
     height: 80vh;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+    width: 90%;
 }
 
 .time::before {
@@ -279,3 +280,13 @@
     font-family: 'Rajdhani', sans-serif;
     text-transform: uppercase;
 }
+.seconds-container {
+    display: none;
+  }
+  
+  /* Show seconds on large screens */
+  @media (min-width: 992px) {
+    .seconds-container {
+      display: block;
+    }
+  }
