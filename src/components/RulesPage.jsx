@@ -5,11 +5,9 @@ import Header from "./Header.jsx";
 
 const RulesPage = () => {
   const [searchParams] = useSearchParams();
-  const [event, setEvent] = useState({}); // State to store event data
+  const [event, setEvent] = useState({});
   const [activeTab, setActiveTab] = useState("description");
   const [animatedItems, setAnimatedItems] = useState([]);
-
-  // Parse event data from URL
   useEffect(() => {
     try {
       const eventParam = searchParams.get("event");
@@ -22,7 +20,6 @@ const RulesPage = () => {
     }
   }, [searchParams]);
 
-  // Animation effect for items to appear one by one
   useEffect(() => {
     const items = document.querySelectorAll(".animate-item");
 
@@ -37,10 +34,10 @@ const RulesPage = () => {
     }, 300);
 
     return () => clearTimeout(animationTimeout);
-  }, [activeTab]); // Reset animation when tab changes
+  }, [activeTab]); 
 
   const handleRegister = () => {
-    window.open("https://forms.gle/YOUR_GOOGLE_FORM_LINK", "_blank");
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdKku886Omny2C4owkq1xBub4ss1fD-CHH8mQYCPwUNjwNT3A/viewform?usp=dialog", "_blank");
   };
 
   return (
