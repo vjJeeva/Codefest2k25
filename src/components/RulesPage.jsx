@@ -81,16 +81,7 @@ const RulesPage = () => {
                     className={`animate-item description-text ${
                       isDescriptionVisible ? "show" : ""
                     }`}
-                  >
-                    The <span className="highlight">Project Contest</span> is a
-                    technical event where participants showcase innovative
-                    projects that solve real-world problems using technology.
-                    Participants must develop their projects beforehand and
-                    present them to a panel of judges. The contest encourages{" "}
-                    <span className="highlight">
-                      creativity, problem-solving, and technical excellence.
-                    </span>
-                  </p>
+                  >{event.description}</p>
                 </div>
 
                 <div className="important-details">
@@ -103,7 +94,7 @@ const RulesPage = () => {
                     >
                       <span className="detail-icon">📌</span>
                       <span className="detail-label">Event Date:</span>{" "}
-                      {event.date || "4th March 2025"}
+                      {"4th March 2025"}
                     </li>
                     <li
                       className={`animate-item ${
@@ -112,7 +103,7 @@ const RulesPage = () => {
                     >
                       <span className="detail-icon">📌</span>
                       <span className="detail-label">Time:</span>{" "}
-                      {event.time || "10:00 AM – 11:00 AM"}
+                      {"10:00 AM – 1:00 PM"}
                     </li>
                     <li
                       className={`animate-item ${
@@ -121,7 +112,7 @@ const RulesPage = () => {
                     >
                       <span className="detail-icon">📌</span>
                       <span className="detail-label">Venue:</span>{" "}
-                      {event.venue || "Eduset Hall - 3rd Floor"}
+                      {event.venue}
                     </li>
                     <li
                       className={`animate-item ${
@@ -130,9 +121,12 @@ const RulesPage = () => {
                     >
                       <span className="detail-icon">📌</span>
                       <span className="detail-label">Team Size:</span>{" "}
-                      {event.teamSize || "1 member"}
+                      {event.teamSize}
                     </li>
                   </ul>
+                  <h2 className="section-title">Event Coordinators</h2>
+                  <p>{event.firstcontact}</p>
+                  <p>{event.secondcontact}</p>
                 </div>
               </div>
             )}
