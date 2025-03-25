@@ -43,6 +43,11 @@ const RulesPage = () => {
     return () => clearTimeout(animationTimeout);
   }, [activeTab]); 
 
+  const handleposter = () => {
+    console.log("clicked");
+    window.open(event.poster, "_blank");
+  };
+
   const handleRegister = () => {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSdKku886Omny2C4owkq1xBub4ss1fD-CHH8mQYCPwUNjwNT3A/viewform?usp=dialog", "_blank");
   };
@@ -158,7 +163,7 @@ const RulesPage = () => {
         </div>
 
         <div className="action-buttons">
-          <button className="action-button poster-button" >Poster</button>
+          <button className="action-button poster-button" onClick={handleposter}>Poster</button>
           <button className="register-button" onClick={handleRegister}>
             Register Now
           </button>
