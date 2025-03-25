@@ -12,7 +12,7 @@ const BentoContactDetails = () => {
     },
     secretary: {
       role: "Secretary",
-      name: "Shahul Irfan S",
+      name: "Shahul Irfhan S",
       phone: "+919876543210", 
       instagram: "shahul_connects"
     },
