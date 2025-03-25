@@ -158,7 +158,7 @@ const RulesPage = () => {
         </div>
 
         <div className="action-buttons">
-          <button className="action-button poster-button">Poster</button>
+          <button className="action-button poster-button" >Poster</button>
           <button className="register-button" onClick={handleRegister}>
             Register Now
           </button>

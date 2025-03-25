@@ -1,6 +1,40 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "../styles/Sponser.css";
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.sponsors-carousel');
+  
+  const updateCenterLogo = () => {
+    const carouselRect = carousel.getBoundingClientRect();
+    const carouselCenter = carouselRect.left + carouselRect.width / 2;
+
+    const logos = document.querySelectorAll('.sponsor-logo');
+    logos.forEach(logo => {
+      const logoRect = logo.getBoundingClientRect();
+      const logoCenter = logoRect.left + logoRect.width / 2;
+
+      // Remove center-logo class from all logos
+      logo.classList.remove('center-logo');
+
+      // Check if logo is near the center of the carousel
+      if (
+        logoCenter >= carouselCenter - 50 && 
+        logoCenter <= carouselCenter + 50
+      ) {
+        logo.classList.add('center-logo');
+      }
+    });
+  };
+
+  // Update center logo on scroll and resize
+  carousel.addEventListener('scroll', updateCenterLogo);
+  window.addEventListener('resize', updateCenterLogo);
+  
+  // Initial update
+  updateCenterLogo();
+});
+
 const LOGO_IMPORTS = {
   Besant: 'https://pbs.twimg.com/profile_images/954643984110022656/AGaxDpCy_400x400.jpg',
   buff: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThG68rh-r81WiG5GbsUmOI1zS5j3q3H3zaBg&s',
@@ -9,6 +43,9 @@ const LOGO_IMPORTS = {
   The_Heavenly_Plates: 'Heavenly Plates.png',
   zuvi: 'zuvi.jpg'
 };
+
+
+
 
 export const Sponser = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -61,7 +98,9 @@ export const Sponser = () => {
         </div>
       </div>
     </div>
+
   );
 };
 
 export default Sponser;
+
