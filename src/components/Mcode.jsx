@@ -9,6 +9,7 @@ import Location from "./Location.jsx";
 import  ContactDetails  from "./ContactDetails.jsx";
 import Sponser from "./Sponser.jsx";
 import GradientText from "../../Reactbits/GradientText/GradientText";
+// import SymposiumHeader from "../../Reactbits/GradientText/SymposiumHeader.jsx";
 
 const Mcode = () => {
   const [text, setText] = useState("Registration Open");
@@ -64,7 +65,10 @@ const Mcode = () => {
             CODEFEST 2K25
           </GradientText>
         </h1>
+        {/* <h5><SymposiumHeader/></h5> */}
       </section>
+
+      
       {/* Timer Section */}
       <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} />
 
