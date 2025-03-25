@@ -3,7 +3,7 @@
   height: 400px;
   position: relative;
   perspective: 1500px;
-  margin: 50px auto;
+  margin: 50px 10px;
 }
 
 .card-3d-inner {
@@ -28,9 +28,7 @@
   right: -2px;
   bottom: -2px;
   background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
+    135deg,
     #00bbff,
     #1940ff,
     #7a00ff,
@@ -275,3 +273,4 @@
     font-size: 0.8rem;
   }
 }
+
