@@ -1,4 +1,4 @@
-.event-toggle-container {
+.event-toggle-container { 
   text-align: center;
   margin: 20px 0;
 }
@@ -17,24 +17,24 @@
 
 .toggle-slider {
   display: inline-block;
-  width: 100px;
   height: 46px;
   background-color: #C42ECC;
   border-radius: 23px;
   position: absolute;
   top: 2px;
   left: 2px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, width 0.3s ease;
 }
 
 .toggle-slider.technical {
+  width: 100px;
   transform: translateX(0);
 }
 
 .toggle-slider.non-technical {
-  width: 120px;
-  transform: translateX(114px);
-  background-color: #32cd32;
+  width: 135px; /* Adjusted width to fit Non-Technical text properly */
+  transform: translateX(100px);
+  background-color: #ff1d9d;
 }
 
 .toggle-text {
