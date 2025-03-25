@@ -268,7 +268,7 @@ const eventinfo = [
     title: "ICONHUNT",
     subtitle: "Decode Tech Language! 🔍💡",
     type: "Technical",
-    background: "Puzzle", 
+    background: Iconhunt,
     venue: "Classroom",
     teamSize: "Individual",
     description: "Welcome to the Icon Hunt Challenge — a fun and engaging competition designed to test your visual recognition and quick thinking! Get ready to identify popular icons in a race against time. The event consists of two exciting rounds that will challenge your memory, observation skills, and knowledge of digital icons.",
