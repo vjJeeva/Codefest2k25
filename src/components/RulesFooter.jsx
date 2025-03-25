@@ -9,6 +9,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const RulesFooter = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  
 
   useEffect(() => {
       const handleScroll = () => {

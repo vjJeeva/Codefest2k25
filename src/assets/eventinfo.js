@@ -9,28 +9,6 @@ import {
 
 const eventinfo = [
   {
-    title: "InnovQuiz",
-    subtitle:"",
-    type: "Technical",
-    background: Freefire,
-    venue:"",
-    teamSize:"",
-    description:[
-
-    ],
-    points: [
-      "This event will consist of multiple-choice and coding questions.",
-      "Round 1: 10 questions in 10 minutes.",
-      "Round 2: 10 questions in 10 minutes.",
-      "Final Round: 15 questions in 10 minutes.",
-    ],
-    rules: [
-      "Rule 1: Lorem ipsum dolor sit amet.",
-      "Rule 2: Consectetur adipiscing elit.",
-      "Rule 3: Sed do eiusmod tempor incididunt.",
-    ],
-  },
-  {
     title: "BOX CRICKET",
     subtitle:"Box Cricket: Small Ground, Big Thrills! 🏏🔥",
     type: "Non-Technical",
@@ -41,7 +19,7 @@ const eventinfo = [
     firstcontact:"  📞 Venkataraman: 70108 74045",
     secondcontact:"  📞 Sanjeev: 96776 81739",
     points: [
-      "Experience fast-paced Box Cricket with 5-player teams, limited overs, and intense backyard-style action!",
+      "Experience fast-paced Box Cricket with 5-player, limited overs.",
     ],
     rules: [
       "Team Composition: Each team has 5 players; no extra substitutes allowed.",  
@@ -73,10 +51,31 @@ const eventinfo = [
     ]
 },
 {
+  title: "FREE FIRE",
+  subtitle: "Free Fire: Survive, Strategize, Dominate! 🔥🎯",
+  type: "Non-Technical",
+  background:Freefire,
+  venue: "Online",
+  teamSize: "Squad Mode (4 Players Per Team)",
+  description: "Get ready for an intense and competitive Battle Royale Ranked (BR Ranked) Squad Mode tournament in Free Fire. Played in E-Sports Mode, this event ensures a fair and level playing field, challenging players to showcase their strategy, teamwork, and survival skills. Compete against the best and prove your dominance in this high-stakes battle!",
+  firstcontact: "A. Ajith: +91 86673 05838",
+  secondcontact: "Loganadhan: +91 97905 36598",
+  points: [
+    "Battle Royale Squad Mode, E-Sports setup, fair play, and intense competition!"
+  ],
+  rules: [
+    "Match Format: BR Ranked (Squad Mode) using E-Sports Mode for fairness.",
+    "Prohibited Actions: Gun skins, banned items, cheats, or hacking disallowed.",
+    "Gameplay Rules: No teaming, intentional disconnection, or bug exploitation.",
+    "Match Monitoring: Custom rooms created, referees may monitor matches.",
+    "Fair Play: Referee and organizer decisions are final; sportsmanship required."
+    ]
+},
+{
   title: "CONNECTION",
   subtitle: "Unlock the clues, connect the dots, and race against time! Think fast, answer faster, and claim victory! 🏆🧠",
   type: "Non-Technical",
-  background: Freefire,
+  background: "Quiz",
   venue: "Auditorium",
   teamSize: "Maximum 4 Members Per Team",
   description: "Test your logic and quick thinking in the thrilling 'Connection' event! Teams will compete across three exciting rounds, answering questions under time pressure. The team with the highest score at the end will be crowned the ultimate champions!",

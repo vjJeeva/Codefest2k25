@@ -4,6 +4,14 @@ import "aos/dist/aos.css";
 import "../styles/About.css";
 
 const About = React.forwardRef((props, ref) => {
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -11,7 +19,7 @@ const About = React.forwardRef((props, ref) => {
       mirror: true,
       easing: 'ease-out-cubic'
     });
-    
+
     // Create digital particles
     const aboutSection = document.querySelector('.about-section');
     if (aboutSection) {
@@ -82,7 +90,7 @@ const About = React.forwardRef((props, ref) => {
             Karpaga Vinayaga College of Engineering and Technology is committed to excellence in education, research, and innovation. 
             Our mission is to empower students with knowledge and skills to succeed in the tech industry.
           </p>
-          <div className="glow-button" data-aos="fade-up" data-aos-delay="600">
+          <div onClick={() => window.open("https://kveg.in/", "_blank")} className="glow-button" data-aos="fade-up" data-aos-delay="600">
             Learn More
           </div>
         </div>
@@ -99,7 +107,7 @@ const About = React.forwardRef((props, ref) => {
             CodeFest 2K25 is an exciting symposium that brings together tech enthusiasts to showcase their skills in coding, AI, and innovation. 
             Join us to participate in workshops, hackathons, and networking sessions.
           </p>
-          <div className="glow-button" data-aos="fade-up" data-aos-delay="600">
+          <div onClick={() => scrollToSection("events")} className="glow-button" data-aos="fade-up" data-aos-delay="600">
             Explore Events
           </div>
         </div>

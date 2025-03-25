@@ -3,7 +3,8 @@ import Football from "./event_card_bg/Football.jpg";
 import Basketball from "./event_card_bg/Basketball.jpg";
 import Cricket from "./event_card_bg/Cricket.jpg";
 import Armrestling from "./event_card_bg/Armrestling.jpg";
-import Iconhunt from "./event_card_bg/Iconhunt.jpeg"
+import Iconhunt from "./event_card_bg/Iconhunt.jpeg";
+import Sound from "./event_card_bg/sound.png";
 
 export {
   Freefire,
@@ -12,4 +13,5 @@ export {
   Cricket,
   Armrestling,
   Iconhunt,
+  Sound,
 };
