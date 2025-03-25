@@ -70,7 +70,7 @@ const eventinfo = [
     "Gameplay Rules: No teaming, intentional disconnection, or bug exploitation.",
     "Match Monitoring: Custom rooms created, referees may monitor matches.",
     "Fair Play: Referee and organizer decisions are final; sportsmanship required."
-    ]
+]
 },
 {
   title: "FOOTBALL",

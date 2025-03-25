@@ -214,7 +214,6 @@
 }
 
 
-/* Existing styles remain the same */
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
@@ -314,5 +313,150 @@
   .social-icons {
     gap: 6px;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer-wrapper {
+    padding: 20px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.281), rgba(67, 38, 72, 0.336));
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-radius:40px 40px 0 0 ;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  /* Hide Quick Links and Contact Us sections */
+  .footer-section:nth-child(2),  /* Quick Links */
+  .footer-section:nth-child(3)   /* Contact Us */
+  {
+    display: none;
+  }
+
+  /* First section (About) */
+  .footer-section:first-child {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .footer-logo {
+    font-size: 22px;
+    color: #ff10f0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-description {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 320px;
+    margin: 0 auto;
+    color: #e0e0e0;
+  }
+
+  /* Our Team section redesign */
+  .footer-section:nth-child(4) {
+    background: rgba(255, 16, 240, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .footer-header {
+    font-size: 16px;
+    color: #ff10f0;
+    margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+  }
+
+  .footer-header::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #ff10f0;
+  }
+
+  .team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-label {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .team-name {
+    display: block;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #fff;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .team-name:hover {
+    color: #ff10f0;
+    transform: scale(1.05);
+  }
+
+  /* Social Media section */
+  .footer-section:last-child {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #ff10f0;
+    transform: scale(1.2);
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    font-size: 12px;
+    color: #999;
+  }
+
+  .footer-bottom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ff10f0, transparent);
+
   }
 }

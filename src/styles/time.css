@@ -617,3 +617,41 @@
         height: 60px;
     }
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 660px) {
+    .countdown-wrapper {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  
+    /* Hide the seconds countdown item */
+    .countdown-wrapper .countdown-item:last-child {
+      display: none;
+    }
+  
+    /* Adjust spacing and sizing for remaining items */
+    .countdown-wrapper .countdown-item {
+      flex-grow: 1;
+    }
+  
+    .countdown-value {
+      width: 80px;
+      height: 100px;
+    }
+  
+    .countdown-digit {
+      font-size: 36px;
+    }
+  
+    .countdown-separator {
+      display: none;
+    }
+  }

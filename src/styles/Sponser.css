@@ -4,8 +4,9 @@
   align-items: center;
   padding: 2rem 0;
   overflow: hidden;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   position: relative;
+  bottom: 50px;
   width: 100%;
 }
 
@@ -138,6 +139,7 @@
   position: relative;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  
 }
 
 .sponsors-carousel::-webkit-scrollbar {
@@ -160,7 +162,6 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: grayscale(100%);
   transition: all 0.5s ease;
 }
 
@@ -169,9 +170,7 @@
   transform: scale(1.2);
 }
 
-.sponsor-logo.active-logo .logo-image {
-  filter: grayscale(0%);
-}
+
 
 @keyframes gradientShift {
   from {
@@ -186,6 +185,7 @@
 @media (max-width: 768px) {
   .sponsors-container {
       padding: 1rem 0;
+      margin-top: -80px;
       margin-bottom: 30px;
   }
 
@@ -193,6 +193,7 @@
       width: 100%;
       margin: 0 auto;
       overflow: hidden;
+      margin-left: -50vw;
   }
 
   .sponsors-carousel {
@@ -222,7 +223,6 @@
   .sponsors-carousel .sponsor-logo {
       opacity: 0.6;
       transform: scale(0.7);
-      filter: grayscale(100%);
       transition: all 0.5s ease;
       
   }
@@ -230,6 +230,85 @@
   .sponsors-carousel .sponsor-logo.center-logo {
       opacity: 1;
       transform: scale(1.2);
-      filter: grayscale(0%);
+  }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .sponsors-container {
+    padding: 1rem 0;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .About-Title {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 60px; 
+  }
+
+  .sponsors-carousel-wrapper {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    margin-right: 99.8%;
+  }
+
+  .sponsors-carousel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    gap: 1rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    animation: autoScroll 20s linear infinite;
+    width: max-content;
+  }
+
+  .sponsors-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sponsor-logo {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 80px;
+    scroll-snap-align: center;
+    opacity: 0.6;
+    transform: scale(0.7);
+    transition: all 0.3s ease;
+    margin: 0 10px;
+  }
+
+  .sponsor-logo .logo-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Center Logo Expansion and Color */
+  .sponsors-carousel .sponsor-logo.center-logo {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+
+
+  /* Automatic Scrolling Animation for Mobile */
+  @keyframes autoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); }
   }
 }
