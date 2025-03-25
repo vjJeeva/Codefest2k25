@@ -21,15 +21,12 @@ const Footer = () => {
     <footer className="footer-wrapper">
       <div className="container">
         <div className="footer-content">
-          {/* Left Section */}
           <div className="footer-section">
             <h2 className="footer-logo">CODEFEST 2K25</h2>
             <p className="footer-description">
               Dive into the world of technology and innovation. Join us on this thrilling journey!
             </p>
           </div>
-
-          {/* Quick Links */}
           <div className="footer-section">
             <h3 className="footer-header">Quick Links</h3>
             <ul className="footer-links">
@@ -39,8 +36,6 @@ const Footer = () => {
               <li onClick={() => scrollToSection("contact")}>Contact</li>
             </ul>
           </div>
-
-          {/* Contact Info */}
           <div className="footer-section">
             <h3 className="footer-header">Contact Us</h3>
             <p className="footer-contact">
@@ -54,8 +49,6 @@ const Footer = () => {
               <IoMail className="contact-icon" />kvcodfest23@gmail.com
             </p></a>
           </div>
-
-          {/* Our Team */}
           <div className="footer-section">
             <h3 className="footer-header">Our Team</h3>
             <div className="team-info">
@@ -67,8 +60,6 @@ const Footer = () => {
               <span className="team-name" onClick={() => window.open("https://www.linkedin.com/in/arjunaadhith5", "_blank")} >Arjun Aadhith BS</span>
             </div>
           </div>
-
-          {/* Social Media */}
           <div className="footer-section">
             <h3 className="footer-header">Follow Us</h3>
             <div className="social-icons">
@@ -89,8 +80,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Footer Bottom */}
         <div className="footer-bottom">
           <p>© CODEFEST 2K25. All rights reserved.</p>
         </div>
