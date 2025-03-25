@@ -10,11 +10,6 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const toggleNav = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -76,7 +71,7 @@ const Header = () => {
         </nav>
 
       
-        <button className="register-btn" onClick={handleRegister}>Register</button>
+        <button className="register-btn" onClick={handleRegister}>{text}</button>
 
         
         <div className="menu-toggle" onClick={toggleNav}>
