@@ -6,7 +6,7 @@ import Time from "./Time";
 import About from "./About.jsx";
 import EventToggle from "./EventToggle.jsx";
 import Location from "./Location.jsx";
-import { ContactDetails } from "./ContactDetails.jsx";
+import  ContactDetails  from "./ContactDetails.jsx";
 import GradientText from "../../Reactbits/GradientText/GradientText";
 
 const Mcode = () => {
