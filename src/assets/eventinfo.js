@@ -5,6 +5,7 @@ import {
   Cricket,
   Armrestling,
   Iconhunt,
+  Sound,
 } from ".";
 
 const eventinfo = [
@@ -37,8 +38,8 @@ const eventinfo = [
     venue: "Court",
     teamSize: "5 Members Per Team",
     description: "Experience the intensity of full-court basketball, where teams compete in a fast-paced, high-energy game that tests endurance, strategy, and teamwork. With dynamic plays, quick transitions, and strategic maneuvers, basketball offers an exciting and competitive experience for all players.",
-    firstcontact: "Karthikeyan A: 7010572468",
-    secondcontact: "Kathiravan D: 9123504247",
+    firstcontact: " 📞Karthikeyan A: 7010572468",
+    secondcontact: " 📞Kathiravan D: 9123504247",
     points: [
       "Compete in full-court basketball with fast breaks and dynamic plays!                                            "
     ],
@@ -58,8 +59,8 @@ const eventinfo = [
   venue: "Online",
   teamSize: "Squad Mode (4 Players Per Team)",
   description: "Get ready for an intense and competitive Battle Royale Ranked (BR Ranked) Squad Mode tournament in Free Fire. Played in E-Sports Mode, this event ensures a fair and level playing field, challenging players to showcase their strategy, teamwork, and survival skills. Compete against the best and prove your dominance in this high-stakes battle!",
-  firstcontact: "A. Ajith: +91 86673 05838",
-  secondcontact: "Loganadhan: +91 97905 36598",
+  firstcontact: " 📞A. Ajith: +91 86673 05838",
+  secondcontact: " 📞Loganadhan: +91 97905 36598",
   points: [
     "Battle Royale Squad Mode, E-Sports setup, fair play, and intense competition!"
   ],
@@ -72,6 +73,27 @@ const eventinfo = [
     ]
 },
 {
+  title: "FOOTBALL",
+  subtitle: "Fast-Paced 5-a-Side Football! ⚽️🔥",
+  type: "Non-Technical",
+  background: Football,
+  venue: "Ground",
+  teamSize: "5 Players Per Team",
+  description: "A high-energy 5-a-side football tournament with quick rounds and intense action. Showcase your skills, teamwork, and strategy in this fast-paced format. Strict rules ensure fair play and maximum fun!",
+  firstcontact: "📞 Suman Babu: +91 97863 76078",
+  secondcontact: "📞 Naveen S: +91 93428 57757",
+  points: [
+      "5-a-side football: 5-min thrillers, 2-min breaks, pure energy!⚡"
+  ],
+  rules: [
+      "Footwear: Sports shoes mandatory (no cleats).",  
+      "Timing: 5-min matches, 2-min breaks between rounds.",  
+      "Team Size: Only 5 players allowed on-field at a time.",  
+      "Conduct: Zero tolerance for fights; referee’s call is final.",  
+      "Substitutions: Allowed only during breaks."
+  ]
+},
+{
   title: "CONNECTION",
   subtitle: "Unlock the clues, connect the dots, and race against time! Think fast, answer faster, and claim victory! 🏆🧠",
   type: "Non-Technical",
@@ -79,8 +101,8 @@ const eventinfo = [
   venue: "Auditorium",
   teamSize: "Maximum 4 Members Per Team",
   description: "Test your logic and quick thinking in the thrilling 'Connection' event! Teams will compete across three exciting rounds, answering questions under time pressure. The team with the highest score at the end will be crowned the ultimate champions!",
-  firstcontact: "Vaitheewari: 91503 89718",
-  secondcontact: "Sunitha: 81486 79302",
+  firstcontact: " 📞Vaitheewari: 91503 89718",
+  secondcontact: " 📞Sunitha: 81486 79302",
   points: [
     "Three intense rounds of quick thinking and strategic answering!"
   ],
@@ -92,6 +114,33 @@ const eventinfo = [
     "Winner: Team with highest score after all rounds wins."
   ]
 },
+{
+  title: "SOUND SYNTAX",
+  subtitle: "🎵 Test your musical knowledge and quick thinking!",
+  type: "Non-Technical",
+  background: Sound,
+  venue: "Auditorium",
+  teamSize: "Maximum 4 Members Per Team",
+  description: "Get ready for 'Sound Syntax'! Compete in a thrilling music quiz featuring three rounds of BGM and lyric identification. The faster you recognize the song, the closer you get to victory!",
+  firstcontact: "📞 Aravind J: +91 90432 71900",
+  secondcontact: "📞 Jayakanth G: +91 93606 54531",
+  points:[
+    "There are a total of three rounds, each categorized by timing."
+  ],
+  "round1Rules": [
+    "Each team will hear 5 BGMs, each lasting around 5 seconds.",
+    "After each BGM ends, teams will have 15 seconds to identify and name the song."
+  ],
+  "round2Rules": [
+    "Each team will hear 5 BGMs, each lasting around 5 seconds.",
+    "After each BGM ends, teams will have 10 seconds to identify and name the song."
+  ],
+  "round3Rules": [
+    "Each team will hear 5 lyrics, each lasting around 5 seconds.",
+    "After each lyric ends, teams will have 5 seconds to identify and name the song."
+  ]
+},
+
 ];
 
 export default eventinfo;
