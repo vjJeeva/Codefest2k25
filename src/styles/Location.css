@@ -1,0 +1,164 @@
+.location-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+  
+  .About-Title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 80px;
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    z-index: 1;
+  }
+  
+  .About-Title::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff00ea, #aa00ff);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: gradientShift 3s infinite alternate;
+  }
+    
+  .location-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(0, 0, 0, 0.168);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    height: 300px;
+  }
+  
+  .map-section {
+    flex: 1;
+  }
+  
+  .map-preview {
+    width: 300px;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .map-preview:hover {
+    transform: scale(1.02);
+  }
+  
+  .text-section {
+    flex: 1;
+  }
+  
+  .college-name {
+    font-family: 'Poppins',sans-serif;
+    font-size: 24px;
+    max-width: 400px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    position: relative;
+    right: 40px;
+    text-align: justify;
+    text-justify: inter-word;
+    transition: 0.5s;
+  }
+
+  .college-name:hover{
+    text-shadow: 0 0 15px #aa00ff;
+  }
+  
+  .location-details {
+    position: relative;
+    right: 40px;
+    top: 15px;
+    color: #b3b3b3;
+    font-size: 10px;
+    transition: 0.8s;
+  }
+  
+  .location-details p {
+    margin:0;
+  }
+
+  .location-details :hover {
+    color: #aa00ff;
+    
+  }
+  
+  .map-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .map-modal-content {
+    width: 80%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes scaleUp {
+    from { 
+      opacity: 0;
+      transform: scale(0.7); 
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1); 
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-scale-up {
+    animation: scaleUp 0.3s ease-out;
+  }
+  
+  @media (max-width: 768px) {
+    .page-location-title {
+      position: static;
+      transform: none;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  
+    .location-wrapper {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .map-preview {
+      height: 200px;
+    }
+  }

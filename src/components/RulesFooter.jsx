@@ -3,8 +3,49 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "../styles/RulesFooter.css";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const RulesFooter = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+
+  useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+  const handleNavigation = (sectionId) => {
+      // If we're already on home page
+      if (location.pathname === "/") {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+          setIsMenuOpen(false);
+          return;
+        }
+      }
+      // If on another page, navigate to home first
+      navigate("/", { state: { scrollTo: sectionId } });
+      setIsMenuOpen(false);
+    };
+  
+    // Scroll to section after home page loads
+    useEffect(() => {
+      if (location.state?.scrollTo) {
+        const section = document.getElementById(location.state.scrollTo);
+        if (section) {
+          setTimeout(() => {
+            section.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
+      }
+    }, [location]);
+
   return (
     <footer className="code-footer">
       <div className="code-footer-container">
@@ -14,7 +55,7 @@ const RulesFooter = () => {
             <a href="mailto:contact@tecblaze.com" className="code-social-icon">
               <FontAwesomeIcon icon={faEnvelope} />
             </a>
-            <a href="tel:+1234567890" className="code-social-icon">
+            <a href="tel:+8682910332" className="code-social-icon">
               <FontAwesomeIcon icon={faPhone} />
             </a>
             <a href="https://maps.google.com" className="code-social-icon">
@@ -28,8 +69,12 @@ const RulesFooter = () => {
 
         <div className="code-footer-right">
           <div className="code-footer-nav">
-            <a href="" className="code-nav-link">Events</a>
-            <a href="" className="code-nav-link">Contact</a>
+            <a href="#events" className="code-nav-link" onClick={(e) => { e.preventDefault(); handleNavigation("events"); }}>
+            Events
+          </a>
+          <a href="#contact" className="code-nav-link" onClick={(e) => { e.preventDefault(); handleNavigation("contact"); }}>
+            Contact
+          </a>
           </div>
         </div>
       </div>

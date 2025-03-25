@@ -17,6 +17,7 @@
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.3.3",
     "codefest2k25": "file:",
+    "lucide-react": "^0.483.0",
     "ogl": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -32,6 +33,6 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "vite": "^6.2.2"
+    "vite": "^6.2.3"
   }
 }

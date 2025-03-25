@@ -19,6 +19,7 @@
 .title {
   font-size: 4rem;
   font-weight: 800;
+  margin-top: 50px;
   margin-bottom: 10px;
   animation: fadeIn 1s ease-out, slideUp 1s ease-out;
 }

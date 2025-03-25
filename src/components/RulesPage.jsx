@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "../styles/RulesPage.css";
+//import EventNav from "./EventNav.jsx";
 import Header from "./Header.jsx";
 import RulesFooter from "./RulesFooter.jsx";
 
@@ -48,7 +49,7 @@ const RulesPage = () => {
 
   return (
     <>
-      <Header />
+      <Header/>
       <div className="project-contest-page">
         <div className="hero-section">
           <h1 className="title">{event.title}</h1>
@@ -157,9 +158,7 @@ const RulesPage = () => {
         </div>
 
         <div className="action-buttons">
-          <button className="action-button contact-button">Contact</button>
           <button className="action-button poster-button">Poster</button>
-          <button className="action-button share-button">Share</button>
           <button className="register-button" onClick={handleRegister}>
             Register Now
           </button>

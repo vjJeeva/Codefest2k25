@@ -5,6 +5,9 @@ import Footer from "./Footer";
 import Time from "./Time";
 import About from "./About.jsx";
 import EventToggle from "./EventToggle.jsx";
+import Location from "./Location.jsx";
+import  ContactDetails  from "./ContactDetails.jsx";
+import Sponser from "./Sponser.jsx";
 import GradientText from "../../Reactbits/GradientText/GradientText";
 
 const Mcode = () => {
@@ -79,9 +82,23 @@ const Mcode = () => {
         <EventToggle/>
       </section>
 
+      {/* Location */}
+      <section id="location">
+        <Location/>
+        </section>
+
+        {/* ContactDetails */}
+        <section id="contact">
+          <ContactDetails/>
+        </section>
+
+        {/* Sponser */}
+        <section id="sponser">
+          <Sponser/>
+        </section>
+
       {/* Footer Section */}
       <footer
-      id="contact"
       ref={footerRef}>
         <Footer />
       </footer>

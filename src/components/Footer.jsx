@@ -50,9 +50,9 @@ const Footer = () => {
             <p className="footer-contact">
               Madhuranthagam (T.k), Chengalpattu (D.t)-603308
             </p>
-            <p className="footer-contact">
-              <IoMail className="contact-icon" /> support@codefest2k25.com
-            </p>
+            <a className="emaila" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrlFNblWBxHbqLMnPTbCkhnpmLWhpTsCSHWHLTxXhPKjmWnCSBpjpXzlGMTNTftMncVXZL"><p className="footer-contact">
+              <IoMail className="contact-icon" /> kvcodfest23@gmail.com
+            </p></a>
           </div>
 
           {/* Our Team */}
@@ -60,11 +60,11 @@ const Footer = () => {
             <h3 className="footer-header">Our Team</h3>
             <div className="team-info">
               <p className="team-label">Developed By</p>
-              <span className="team-name">Jeeva P</span>
-              <span className="team-name">Jeeva V</span>
+              <span className="team-name" onClick={() => window.open("https://www.linkedin.com/in/jeeva-p-a541242a3", "_blank")}>Jeeva P</span>
+              <span className="team-name" onClick={() => window.open("https://www.linkedin.com/in/jeeva-v-b2a44b274", "_blank")}>Jeeva V</span>
               
               <p className="team-label">Designed By</p>
-              <span className="team-name">Arjun Aadhith BS</span>
+              <span className="team-name" onClick={() => window.open("https://www.linkedin.com/in/arjunaadhith5", "_blank")} >Arjun Aadhith BS</span>
             </div>
           </div>
 
