@@ -45,8 +45,8 @@ const Footer = () => {
             <p className="footer-contact">
               Madhuranthagam (T.k), Chengalpattu (D.t)-603308
             </p>
-            <a className="emaila" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrlFNblWBxHbqLMnPTbCkhnpmLWhpTsCSHWHLTxXhPKjmWnCSBpjpXzlGMTNTftMncVXZL"><p className="footer-contact">
-              <IoMail className="contact-icon" /> kvcodfest23@gmail.com
+            <a className="emaila" href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWtMqjJpkDbcwqbLDpSDkLzsHXHrRGjCxMlRgxGwtxGXlksXNpftGwRDJzmdMFVNxmtLzHbwB"><p className="footer-contact">
+              <IoMail className="contact-icon" />kvcodfest23@gmail.com
             </p></a>
           </div>
           <div className="footer-section">

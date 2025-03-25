@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "../styles/EventCard.css";
 
+
+
+
+
+
 const Card3D = ({ event }) => {
   const [mousePosition, setMousePosition] = useState({ x: "50%", y: "50%" });
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
@@ -41,7 +46,7 @@ const Card3D = ({ event }) => {
       >
         <div className="card-3d-front">
           <div className="card-3d-image">
-            <img src={event.background} alt="Card Image" />
+            <img src={event.background} alt="Card Image"/>
           </div>
           <div className="card-3d-content">
             <h3 className="card-3d-title">{event.title}</h3>
