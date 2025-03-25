@@ -274,3 +274,158 @@
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base styles with mobile-first approach */
+.card-3d {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  position: relative;
+  perspective: 1500px;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments for different device sizes */
+@media screen and (max-width: 480px) {
+  .card-3d {
+    width: 90%;
+    max-width: 250px;
+    height: 350px;
+    margin: 15px auto;
+  }
+
+  .card-3d-title {
+    font-size: 1.1rem;
+  }
+
+  .card-3d-text {
+    font-size: 0.8rem;
+    max-width: 220px;
+  }
+
+  .card-3d-button {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .card-3d {
+    width: 80%;
+    max-width: 280px;
+    height: 380px;
+    margin: 20px auto;
+  }
+
+  .card-3d-title {
+    font-size: 1.2rem;
+  }
+
+  .card-3d-text {
+    font-size: 0.85rem;
+    max-width: 240px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .card-3d {
+    width: 70%;
+    max-width: 300px;
+    height: 400px;
+    margin: 25px auto;
+  }
+}
+
+/* Tablet and Desktop Hover Effects */
+@media (hover: hover) and (pointer: fine) {
+  .card-3d:hover .card-3d-inner {
+    transform: rotateY(10deg) rotateX(5deg);
+  }
+
+  .card-3d:hover .card-3d-image img {
+    transform: scale(1.05);
+  }
+}
+
+/* Touch Device Adjustments */
+@media (pointer: coarse) {
+  .card-3d {
+    transform: none !important;
+  }
+
+  .card-3d-inner {
+    transition: none;
+  }
+
+  .card-3d-button {
+    /* Larger touch target for mobile */
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Accessibility and Performance Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .card-3d-inner,
+  .card-3d-image img,
+  .card-3d-button,
+  .card-3d::after {
+    transition: none;
+  }
+
+  .card-3d-inner::before {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (forced-colors: active) {
+  .card-3d-inner::before {
+    display: none;
+  }
+
+  .card-3d-front {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Orientation-based Adjustments */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .card-3d {
+    height: 300px;
+    max-width: 200px;
+  }
+
+  .card-3d-content {
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+

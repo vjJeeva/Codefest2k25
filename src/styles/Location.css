@@ -162,3 +162,172 @@
       height: 200px;
     }
   }
+
+
+  
+
+@media (max-width: 480px) {
+  .location-container {
+      padding: 10px;
+      max-width: 100%;
+  }
+
+  .About-Title {
+      font-size: 1.8rem;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+  }
+
+  .About-Title::after {
+      width: 80px;
+      bottom: -10px;
+  }
+
+  .location-wrapper {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      height: auto;
+      border-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .map-section,
+  .text-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .map-preview {
+      width: 250px;
+      height: 180px;
+      transition: all 0.3s ease;
+  }
+
+  .college-name {
+      font-size: 20px;
+      right: 0;
+      text-align: center;
+      max-width: 100%;
+  }
+
+  .location-details {
+      right: 0;
+      text-align: center;
+      font-size: 12px;
+  }
+
+  /* Mobile-specific animations */
+  @keyframes slideInFromBottom {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes fadeInAndScale {
+      from {
+          opacity: 0;
+          transform: scale(0.8);
+      }
+      to {
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+
+  /* Staggered Animation for Mobile */
+  .map-section {
+      animation: slideInFromBottom 0.6s ease-out;
+  }
+
+  .text-section {
+      animation: fadeInAndScale 0.6s ease-out 0.3s backwards;
+  }
+
+  .map-preview {
+      animation: fadeInAndScale 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .college-name {
+      transition: all 0.4s ease;
+  }
+
+  .college-name:hover {
+      transform: scale(1.02);
+      text-shadow: 0 0 10px #aa00ff;
+  }
+}
+
+/* Tablet Responsive Design */
+@media (min-width: 481px) and (max-width: 768px) {
+  .location-container {
+      padding: 15px;
+      width: 500px;
+      margin-bottom: -120px;
+  }
+
+  .location-wrapper {
+      flex-direction: column;
+      gap: 25px;
+      padding: 60px 30px;
+      height: 550px;
+  }
+
+  .map-preview {
+      width: 300px;
+      height: 250px;
+  }
+
+  .college-name {
+      right: 0;
+      text-align: center;
+  }
+
+  .location-details {
+      right: 0;
+      text-align: center;
+  }
+}
+
+/* Large Mobile and Small Tablet Optimization */
+@media (max-width: 768px) {
+  /* Ensure responsive typography */
+  .About-Title {
+      font-size: 2rem;
+  }
+
+  /* Smooth transitions for interactive elements */
+  .map-preview,
+  .college-name {
+      transition: all 0.3s ease;
+  }
+}
+
+/* Accessibility and Performance Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable animations for users who prefer reduced motion */
+  * {
+      animation: none !important;
+      transition: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (forced-colors: active) {
+  .location-wrapper {
+      border: 2px solid currentColor;
+  }
+
+  .map-preview {
+      border: 1px solid currentColor;
+  }
+}
+
+  

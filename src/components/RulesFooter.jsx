@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "../styles/RulesFooter.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const RulesFooter = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
   
 
   useEffect(() => {
@@ -52,16 +53,16 @@ const RulesFooter = () => {
         <div className="code-footer-left">
           <div className="code-footer-logo">CODEFEST 2K25</div>
           <div className="code-footer-social">
-            <a href="mailto:contact@tecblaze.com" className="code-social-icon">
+            <a href="mailto:kvcodfest23@gmail.com" className="code-social-icon">
               <FontAwesomeIcon icon={faEnvelope} />
             </a>
-            <a href="tel:+8682910332" className="code-social-icon">
+            <a href="tel:+917708252595" className="code-social-icon">
               <FontAwesomeIcon icon={faPhone} />
             </a>
-            <a href="https://maps.google.com" className="code-social-icon">
+            <a href="https://maps.app.goo.gl/5EV59h55KDJEaFqF7" target="_blank" className="code-social-icon">
               <FontAwesomeIcon icon={faMapMarkerAlt} />
             </a>
-            <a href="https://instagram.com" className="code-social-icon">
+            <a href="https://www.instagram.com/codefest_2k25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="code-social-icon">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
           </div>

@@ -4,6 +4,10 @@ import NonTechnicalEvents from "./NonTechnicalEvents";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/EventToggle.css";
 
+
+
+
+
 const EventToggle = () => {
   const [isTechnical, setIsTechnical] = useState(true);
 
@@ -12,6 +16,13 @@ const EventToggle = () => {
   };
 
   return (
+
+    <>
+      <div className="About-Title">
+        Events
+        <span className="title-glow"></span>
+        </div>
+        
     <div className="event-toggle-container">
       <div
         className="toggle-switch"
@@ -25,6 +36,8 @@ const EventToggle = () => {
           }
         }}
       >
+      
+
         <div className={`toggle-slider ${isTechnical ? "technical" : "non-technical"}`}></div>
        <div>
        <span className="toggle-text technical-text">Technical</span>
@@ -35,6 +48,7 @@ const EventToggle = () => {
         {isTechnical ? <TechnicalEvents /> : <NonTechnicalEvents />}
       </div>
     </div>
+    </>
   );
 };
 

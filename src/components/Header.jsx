@@ -15,7 +15,6 @@ const Header = () => {
   };
 
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -29,7 +28,6 @@ const Header = () => {
   };
 
   const handleNavigation = (sectionId) => {
-    // If we're already on home page
     if (location.pathname === "/") {
       const section = document.getElementById(sectionId);
       if (section) {
@@ -38,12 +36,12 @@ const Header = () => {
         return;
       }
     }
-    // If on another page, navigate to home first
+
     navigate("/", { state: { scrollTo: sectionId } });
     setIsMenuOpen(false);
   };
 
-  // Scroll to section after home page loads
+
   useEffect(() => {
     if (location.state?.scrollTo) {
       const section = document.getElementById(location.state.scrollTo);
