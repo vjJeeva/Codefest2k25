@@ -7,6 +7,10 @@ const Time = ({ aboutSectionRef, footerRef }) => {
   const mainTimerRef = useRef(null);
   const [particles, setParticles] = useState([]);
 
+  const handleRegister = () => {
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdKku886Omny2C4owkq1xBub4ss1fD-CHH8mQYCPwUNjwNT3A/viewform?usp=dialog", "_blank");
+  };
+
   // Update countdown timer
   useEffect(() => {
     const targetDate = new Date("2025-04-04T09:00:00");
@@ -137,7 +141,7 @@ const Time = ({ aboutSectionRef, footerRef }) => {
           </div>
           
           <div className="register-button-container">
-            <a href="#" className="register-button">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKku886Omny2C4owkq1xBub4ss1fD-CHH8mQYCPwUNjwNT3A/viewform?usp=dialog" className="register-button" target="_blank">
               <span className="button-text">{'<'} REGISTER NOW {'>'}</span>
               <span className="button-flash"></span>
               <div className="button-circuit-lines"></div>

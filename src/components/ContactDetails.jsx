@@ -7,27 +7,27 @@ const BentoContactDetails = () => {
     president: {
       role: "President",
       name: "Bharathvaj V",
-      phone: "+911234567890",
-      instagram: "bharathvaj_official"
+      phone: "+918682910332",
+      instagram: "bharath.v.a.j"
     },
     secretary: {
       role: "Secretary",
       name: "Shahul Irfhan S",
-      phone: "+919876543210", 
-      instagram: "shahul_connects"
+      phone: "+919123500886", 
+      instagram: "least.ly_____liked"
     },
     programDirectors: [
       {
         role: "Program Director",
         name: "Muthuselvi M",
-        phone: "+918765432109",
-        instagram: "muthuselvi_official"
+        phone: "+917708252595",
+        instagram: "ahamselvi"
       },
       {
         role: "Program Director", 
         name: "Dr. V.S. Thiyagarajan",
-        phone: "+917654321098",
-        instagram: "dr_thiyagarajan"
+        phone: "+919500833744",
+        instagram: "dr_thiyagarajan_v_s"
       }
     ]
   };
