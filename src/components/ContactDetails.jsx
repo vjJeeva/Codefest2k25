@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Phone, Instagram } from 'lucide-react';
 import "../styles/ContactDetails.css";
 
@@ -40,11 +40,37 @@ const BentoContactDetails = () => {
     window.open(`https://instagram.com/${username}`, '_blank');
   };
 
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.scroll-animation, .contact-title');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements?.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <div className="contact-container">
-      <h1 className="contact-title">Contact Us</h1>
+    <div className="contact-container" ref={sectionRef}>
+      <h1 className="contact-title scroll-animation">Contact Us</h1>
       <div className="bento-grid">
-        <div className="bento-box president">
+        <div className="bento-box president scroll-animation">
           <h2>{contacts.president.role}</h2>
           <p>{contacts.president.name}</p>
           <div className="contact-icons">
@@ -57,7 +83,7 @@ const BentoContactDetails = () => {
           </div>
         </div>
         
-        <div className="bento-box secretary">
+        <div className="bento-box secretary scroll-animation">
           <h2>{contacts.secretary.role}</h2>
           <p>{contacts.secretary.name}</p>
           <div className="contact-icons">
@@ -70,7 +96,7 @@ const BentoContactDetails = () => {
           </div>
         </div>
         
-        <div className="bento-box program-directors full-width">
+        <div className="bento-box program-directors full-width scroll-animation">
           <h2>Program Directors</h2>
           <div className="directors-grid">
             {contacts.programDirectors.map((director, index) => (

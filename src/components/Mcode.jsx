@@ -58,10 +58,11 @@ const Mcode = () => {
           >
             CODEFEST 2K25
           </GradientText>
-          {/* <SymposiumHeader /> */}
         </h1>
-        {/* <h5><SymposiumHeader/></h5> */}
       </section>
+
+
+      <SymposiumHeader />
 
       {/* Timer Section */}
       <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} />
