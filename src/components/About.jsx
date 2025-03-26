@@ -104,9 +104,7 @@ const About = React.forwardRef((props, ref) => {
           data-aos-delay="400">
           <h1>CodeFest 2K25 Symposium</h1>
           <p>
-            CodeFest 2K25 is an exciting symposium that brings together tech enthusiasts to showcase their skills in coding, AI, and innovation. 
-            Join us to participate in workshops, hackathons, and networking sessions.
-          </p>
+          Codefest 2K25 blends innovation and excitement! Solve problems, push boundaries, and embrace strategy, teamwork, and celebration. Whether competing or discovering, each challenge fuels brilliance. Get ready to code, create, and conquer!</p>
           <div onClick={() => scrollToSection("events")} className="glow-button" data-aos="fade-up" data-aos-delay="600">
             Explore Events
           </div>

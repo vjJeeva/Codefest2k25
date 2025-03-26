@@ -7,13 +7,13 @@
   align-items: center;
   justify-content: center;
   border-radius: 1.25rem;
-  /* 20px */
-  font-weight: 800;
-  font-size: 120px;
-  /* backdrop-filter: blur(10px); */
+  font-weight: 900;
+  font-size: 140px;
   transition: box-shadow 0.5s ease-out;
   overflow: hidden;
   cursor: pointer;
+  letter-spacing: 2px;
+  white-space: nowrap; /* Prevent text from breaking into multiple lines */
 }
 
 .gradient-overlay {
@@ -48,11 +48,9 @@
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -83,36 +81,33 @@
 
 @media (max-width: 768px) {
   .animated-gradient-text {
-    font-size: 50px;
+    font-size: 60px; /* Increased font size for mobile */
     padding: 10px 15px;
     border-radius: 0.75rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .animated-gradient-text {
-    font-size: 36px;
-    padding: 8px 12px;
-    border-radius: 0.5rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .animated-gradient-text {
-    font-size: 28px;
-    padding: 6px 10px;
-    border-radius: 0.4rem;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .animated-gradient-text {
+    margin-bottom: 10px; /* Reduced bottom space */
     animation: mobileTextPulse 3s ease-in-out infinite alternate;
   }
 
   .text-content {
     animation: mobileGradientShift 5s linear infinite;
+  }
+}
+
+@media (max-width: 576px) {
+  .animated-gradient-text {
+    font-size: 45px; /* Further increased for smaller mobile screens */
+    padding: 8px 12px;
+    border-radius: 0.5rem;
+    margin-bottom: 5px; /* Further reduced bottom space */
+  }
+}
+
+@media (max-width: 400px) {
+  .animated-gradient-text {
+    font-size: 35px; /* Slightly larger for very small screens */
+    padding: 6px 10px;
+    border-radius: 0.4rem;
+    margin-bottom: 0; /* Minimal bottom space */
   }
 }
 
@@ -145,3 +140,56 @@
     background-position: 0% 50%;
   }
 }
+
+
+
+@media (max-width: 1200px) {
+  .animated-gradient-text {
+    font-size: 110px; /* Increased from 90px */
+  }
+}
+
+@media (max-width: 992px) {
+  .animated-gradient-text {
+    font-size: 90px; /* Increased from 70px */
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-gradient-text {
+    font-size: 75px; /* Increased from 60px */
+    padding: 10px 15px;
+    border-radius: 0.75rem;
+    margin-bottom: 10px;
+    animation: mobileTextPulse 3s ease-in-out infinite alternate;
+  }
+
+  .text-content {
+    animation: mobileGradientShift 5s linear infinite;
+  }
+}
+
+@media (max-width: 576px) {
+  .animated-gradient-text {
+    font-size: 55px; /* Increased from 45px */
+    padding: 8px 12px;
+    border-radius: 0.5rem;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .animated-gradient-text {
+    font-size: 50px; /* Increased from 35px */
+    padding: 6px 10px;
+    border-radius: 0.4rem;
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+
+

@@ -655,3 +655,29 @@
       display: none;
     }
   }
+
+  @media (max-width: 768px) {
+    .time-container {
+        min-height: 80vh; /* Reduced from 100vh */
+    }
+
+    .time {
+        min-height: 70vh; /* Reduced from 80vh */
+    }
+}
+
+@media (max-width: 576px) {
+    .time-container {
+        min-height: 100vh; /* Further reduced for smaller screens */
+    }
+
+    .time {
+        min-height: 60vh; /* Further reduced for smaller screens */
+    }
+}
+
+
+
+
+
+
