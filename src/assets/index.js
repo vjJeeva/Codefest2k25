@@ -4,7 +4,7 @@ import Basketball from "./event_card_bg/Basketball.jpg";
 import Cricket from "./event_card_bg/Cricket.jpg";
 import Armrestling from "./event_card_bg/Armrestling.jpg";
 import Iconhunt from "./event_card_bg/Iconhunt.jpeg";
-import Sound from "./event_card_bg/sound1.png";
+import Sound from "./event_card_bg/Sound 1.webp";
 import Connection from "./event_card_bg/Connection.jpg";
 import Ideaflow from "./event_card_bg/Ideaflow.webp";
 import WebCraft from "./event_card_bg/WebCraft.jpg";
