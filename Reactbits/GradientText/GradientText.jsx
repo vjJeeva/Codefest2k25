@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './GradientText.css';
+import React, { useState, useEffect } from "react";
+import "./GradientText.css";
 
 export default function GradientText({
   children,
@@ -7,26 +7,26 @@ export default function GradientText({
   colors = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"],
   animationSpeed = 8,
   showBorder = false,
-  decryptEffect = false
+  decryptEffect = false,
 }) {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const originalText = children.toString();
 
   useEffect(() => {
     if (decryptEffect) {
       let iteration = 0;
       const decrypt = () => {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
         setDisplayText(
           originalText
-            .split('')
+            .split("")
             .map((char, index) => {
               if (index < iteration) {
                 return originalText[index];
               }
               return characters[Math.floor(Math.random() * characters.length)];
             })
-            .join('')
+            .join("")
         );
 
         if (iteration < originalText.length) {
@@ -47,9 +47,11 @@ export default function GradientText({
 
   return (
     <div className={`animated-gradient-text ${className}`}>
-      {showBorder && <div className="gradient-overlay" style={gradientStyle}></div>}
-      <div 
-        className={`text-content ${decryptEffect ? 'decrypt-effect' : ''}`} 
+      {showBorder && (
+        <div className="gradient-overlay" style={gradientStyle}></div>
+      )}
+      <div
+        className={`text-content ${decryptEffect ? "decrypt-effect" : ""}`}
         style={gradientStyle}
       >
         {displayText}

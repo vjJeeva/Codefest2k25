@@ -5,6 +5,12 @@ import Cricket from "./event_card_bg/Cricket.jpg";
 import Armrestling from "./event_card_bg/Armrestling.jpg";
 import Iconhunt from "./event_card_bg/Iconhunt.jpeg";
 import Sound from "./event_card_bg/sound1.png";
+import Connection from "./event_card_bg/Connection.jpg";
+import Ideaflow from "./event_card_bg/Ideaflow.webp";
+import WebCraft from "./event_card_bg/WebCraft.jpg";
+import Innov from "./event_card_bg/Innov.webp";
+import WordHunt from "./event_card_bg/wordhurt.webp";
+import Codecraze from "./event_card_bg/codecraze.webp";
 
 export {
   Freefire,
@@ -14,4 +20,10 @@ export {
   Armrestling,
   Iconhunt,
   Sound,
+  Connection,
+  WebCraft,
+  Ideaflow,
+  Innov,
+  WordHunt,
+  Codecraze,
 };

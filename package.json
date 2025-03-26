@@ -17,6 +17,7 @@
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.3.3",
     "codefest2k25": "file:",
+    "framer-motion": "^11.18.2",
     "lucide-react": "^0.483.0",
     "ogl": "^1.0.11",
     "react": "^19.0.0",

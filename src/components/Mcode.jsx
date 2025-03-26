@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -6,21 +6,15 @@ import Time from "./Time";
 import About from "./About.jsx";
 import EventToggle from "./EventToggle.jsx";
 import Location from "./Location.jsx";
-import  ContactDetails  from "./ContactDetails.jsx";
+import ContactDetails from "./ContactDetails.jsx";
 import Sponser from "./Sponser.jsx";
 import GradientText from "../../Reactbits/GradientText/GradientText";
+import SymposiumHeader from "../../Reactbits/GradientText/SymposiumHeader.jsx";
 // import SymposiumHeader from "../../Reactbits/GradientText/SymposiumHeader.jsx";
 
 const Mcode = () => {
-  const [text, setText] = useState("Registration Open");
   const aboutSectionRef = useRef(null); // Ref for the About section
   const footerRef = useRef(null);
-
-  const reg = () => {
-    setText(
-      text === "Registration Open" ? "Registration Close" : "Registration Open"
-    );
-  };
 
   window.addEventListener("scroll", function () {
     const animatedElement = document.querySelector(".animated-element");
@@ -46,7 +40,7 @@ const Mcode = () => {
           alignItems: "center",
         }}
       >
-        <h1 className="animate-charcter" >
+        <h1 className="animate-charcter">
           <GradientText
             colors={[
               "#d4d4d4",
@@ -64,46 +58,41 @@ const Mcode = () => {
           >
             CODEFEST 2K25
           </GradientText>
+          {/* <SymposiumHeader /> */}
         </h1>
         {/* <h5><SymposiumHeader/></h5> */}
       </section>
 
-      
       {/* Timer Section */}
       <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} />
 
       {/* About Section */}
-      <section
-      id="about"
-      ref={aboutSectionRef}>
+      <section id="about" ref={aboutSectionRef}>
         <About />
       </section>
 
       {/* Events Section */}
-      <section
-      id="events"
-      >
-        <EventToggle/>
+      <section id="events">
+        <EventToggle />
       </section>
 
       {/* Location */}
       <section id="location">
-        <Location/>
-        </section>
+        <Location />
+      </section>
 
-        {/* ContactDetails */}
-        <section id="contact">
-          <ContactDetails/>
-        </section>
+      {/* ContactDetails */}
+      <section id="contact">
+        <ContactDetails />
+      </section>
 
-        {/* Sponser */}
-        <section id="sponser">
-          <Sponser/>
-        </section>
+      {/* Sponser */}
+      <section id="sponser">
+        <Sponser />
+      </section>
 
       {/* Footer Section */}
-      <footer
-      ref={footerRef}>
+      <footer ref={footerRef}>
         <Footer />
       </footer>
     </div>
