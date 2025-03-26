@@ -1,0 +1,50 @@
+.symposium-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .symposium-header-content {
+    text-align: center;
+    max-width: 800px;
+  }
+  
+  .symposium-title,
+  .symposium-department,
+  .symposium-tagline-primary,
+  .symposium-tagline-secondary,
+  .symposium-tagline-tertiary {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: block;
+  }
+  
+  .symposium-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .symposium-department {
+    margin-bottom: 20px;
+  }
+  
+  .symposium-taglines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .symposium-tagline-primary {
+    font-style: italic;
+  }
+  
+  .symposium-tagline-secondary {
+    text-transform: lowercase;
+  }
+  
+  .symposium-tagline-tertiary {
+    font-weight: bold;
+  }
