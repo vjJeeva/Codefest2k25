@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  margin-top: -30px;
+  margin-top: -75px;
 }
 
 .contact-title {
@@ -21,7 +21,7 @@
 }
 
 .contact-title::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100px;
   height: 4px;
@@ -52,10 +52,8 @@
   overflow: hidden;
 }
 
-
-
 .bento-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -78,7 +76,7 @@
 }
 
 .bento-box p {
-  font-family: "Poppins",sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
   margin-bottom: 1rem;
@@ -116,7 +114,14 @@
 }
 
 .contact-icons button:nth-child(2):hover {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
   box-shadow: 0 0 15px rgba(220, 39, 67, 0.5);
 }
 
@@ -132,14 +137,17 @@
 
 @media (max-width: 768px) {
   .bento-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .full-width {
-      grid-column: span 1;
+    grid-column: span 1;
   }
 
   .directors-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+  .contact-container {
+    margin-top: 0;
   }
 }
