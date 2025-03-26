@@ -316,7 +316,7 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .footer-wrapper {
     padding: 20px 0;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.281), rgba(67, 38, 72, 0.336));
