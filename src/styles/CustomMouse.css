@@ -1,17 +1,23 @@
-
 /* custom cursor */
 .custom-cursor {
-    position: fixed;    
-    pointer-events: none;
-    transform: rotate(286deg);
-    transition: transform 0.1s ease-out, scale 0.3s ease;
-    z-index: 9999;
-  }
-  
-  .custom-cursor.active {
-    transform: rotate(275deg) scale(1.3);
-  }
+  position: fixed;    
+  pointer-events: none;
+  transform: rotate(286deg) scaleX(-1); /* Added scaleX(-1) to flip */
+  transition: transform 0.1s ease-out, scale 0.3s ease;
+  z-index: 9999;
+}
 
-  * {
-    cursor: none !important;
+.custom-cursor.active {
+  transform: rotate(275deg) scale(1.3) scaleX(-1); /* Maintained flip in active state */
+}
+
+* {
+  cursor: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none; /* Optional: hide on very small screens */
   }
+}
