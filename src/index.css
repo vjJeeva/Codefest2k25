@@ -6,7 +6,10 @@
 
 @font-face {
   font-family: 'Cyber Alert';
-  src: url('Codefest2k25\public\fonts\Cyber Alert.otf') format('opentype');
-  font-weight: normal;
+  src: url('../public/fonts/cyber_alert-webfont.woff2') format('woff2');
+  src: url('../public/fonts/cyber_alert-webfont.woff') format('woff');
+  
+  font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
