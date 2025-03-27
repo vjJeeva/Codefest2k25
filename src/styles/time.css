@@ -839,8 +839,7 @@
         justify-content: center;
         align-items: center;
         width: 300px;
-        position: relative;
-        left: 15px;
+        margin: 0 auto; /* This centers the wrapper horizontally */
     }
 
     .countdown-value {
@@ -888,5 +887,3 @@
         font-size: 16px;
     }
 }
-
-
