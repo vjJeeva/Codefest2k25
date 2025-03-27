@@ -194,8 +194,8 @@
   }
 
   .logo {
-    margin-top: 5px;
-      font-size: 16px;
+    margin-top: 8px;
+      font-size: 14px;
   }
 
   .nav-menu a {
@@ -203,7 +203,7 @@
   }
 
   .register-btn {
-      font-size: 10px;
-      padding: 12px 20px;
+      font-size: 8px;
+      padding: 10px 10px;
   }
 }

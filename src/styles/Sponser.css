@@ -254,6 +254,7 @@
   .sponsors-Title {
     position: relative;
     z-index: 2;
+    font-size: 35px;
     margin-bottom: 60px;
   }
 
