@@ -6,9 +6,22 @@ import clickSound from "../sounds/Pop.wav";
 const CustomMouse = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isActive, setIsActive] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [playClick] = useSound(clickSound, { volume: 0.5 });
 
   useEffect(() => {
+    // Detect mobile devices
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth <= 768 || 
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      );
+    };
+
+    // Check on mount and add resize listener
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     // Add global CSS to hide system cursor
     const style = document.createElement('style');
     style.innerHTML = `
@@ -22,7 +35,7 @@ const CustomMouse = () => {
       // Handle both mouse and touch events
       const clientX = e.clientX || (e.touches && e.touches[0]?.clientX);
       const clientY = e.clientY || (e.touches && e.touches[0]?.clientY);
-      
+
       if (clientX !== undefined && clientY !== undefined) {
         setPos({ x: clientX, y: clientY });
       }
@@ -53,7 +66,8 @@ const CustomMouse = () => {
 
     // Cleanup function
     return () => {
-      // Remove the style we added
+      // Remove event listeners
+      window.removeEventListener('resize', checkMobile);
       document.head.removeChild(style);
 
       document.removeEventListener("mousemove", updatePos);
@@ -68,6 +82,11 @@ const CustomMouse = () => {
     };
   }, [playClick]);
 
+  // Don't render on mobile if isMobile is true
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <BsFillCursorFill
       className={`custom-cursor ${isActive ? 'active' : ''}`}
@@ -79,7 +98,7 @@ const CustomMouse = () => {
         pointerEvents: "none",
         color: "Pink",
         zIndex: 9999,
-        transform: "scaleX(1) rotate(286deg)", // Corrected transform syntax
+        transform: "scaleX(1) rotate(286deg)",
       }}
     />
   );
