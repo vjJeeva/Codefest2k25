@@ -191,19 +191,36 @@
       width: 94%;
       margin-top: 35px;
       border-radius: 30px;
+      display: flex;
+      flex-wrap: wrap; /* Allow items to wrap */
+      align-items: center; /* Vertically align items */
+      justify-content: space-between; /* Distribute space between items */
   }
 
   .logo {
-    margin-top: 8px;
-      font-size: 14px;
+      margin-top: 10px;
+      font-size: 12px;
+      white-space: normal; /* Allow text to wrap */
+      word-wrap: break-word; /* Break long words if needed */
+      max-width: 100%; /* Ensure logo doesn't overflow */
+  }
+
+  .nav-menu {
+      display: flex;
+      flex-wrap: wrap; /* Allow menu items to wrap */
+      width: 100%; /* Full width to ensure responsiveness */
+      justify-content: center; /* Center menu items */
   }
 
   .nav-menu a {
       font-size: 20px;
+      margin: 5px; /* Add some spacing between menu items */
+      text-align: center; /* Center menu item text */
   }
 
   .register-btn {
       font-size: 8px;
-      padding: 10px 10px;
+      padding: 8px;
+      white-space: nowrap; /* Keep button text on single line */
   }
 }
