@@ -1,19 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Header.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const navMenuRef = useRef(null);
 
   const toggleNav = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +21,30 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle clicks outside the nav menu
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if the menu is open and the click is outside the nav menu
+      if (
+        isMenuOpen && 
+        navMenuRef.current && 
+        !navMenuRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Add event listener to the document
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    // Cleanup event listeners
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const handleRegister = () => {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSdKku886Omny2C4owkq1xBub4ss1fD-CHH8mQYCPwUNjwNT3A/viewform?usp=dialog", "_blank");
@@ -41,7 +64,6 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-
   useEffect(() => {
     if (location.state?.scrollTo) {
       const section = document.getElementById(location.state.scrollTo);
@@ -52,13 +74,16 @@ const Header = () => {
       }
     }
   }, [location]);
+
   return (
     <header className="header-container">
       <div className="header-content container d-flex justify-content-between align-items-center">
         <h3 className="logo">CODEFEST 2K25</h3>
-
-       
-        <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
+        
+        <nav 
+          ref={navMenuRef}
+          className={`nav-menu ${isMenuOpen ? "active" : ""}`}
+        >
           <a href="#home" onClick={(e) => { e.preventDefault(); handleNavigation("home"); }}>
             Home
           </a>
@@ -73,10 +98,8 @@ const Header = () => {
           </a>
         </nav>
 
-      
         <button className="register-btn" onClick={handleRegister}>Register Now</button>
 
-        
         <div className="menu-toggle" onClick={toggleNav}>
           <span></span>
           <span></span>
