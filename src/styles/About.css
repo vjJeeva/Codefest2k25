@@ -587,14 +587,18 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .tech-path {
-    flex-direction: column; /* Stack vertically on very small screens */
-    gap: 20px;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .path-node {
+    width: auto;
   }
   
   .path-connector {
-    width: 3px; /* Vertical connector */
-    height: 40px;
+    width: 30px;
+    height: 3px;
   }
 }

@@ -4,7 +4,6 @@
   position: relative;
   perspective: 1500px;
   margin: 50px 10px;
-  
 }
 
 .card-3d-inner {
@@ -275,8 +274,6 @@
   }
 }
 
-
-
 /* Responsive adjustments for different device sizes */
 @media screen and (max-width: 480px) {
   .card-3d {
@@ -393,14 +390,11 @@
   }
 }
 
-
-
 /* Scroll Reveal Animation */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(50px) scale(0.9);
-  transition: 
-    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -439,7 +433,7 @@
 
 .card-3d:hover {
   transform: scale(1.03);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Button hover effect */
@@ -450,16 +444,16 @@
 }
 
 .card-3d-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    120deg, 
-    transparent, 
-    rgba(255,255,255,0.3), 
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
     transparent
   );
   transition: all 0.5s ease;
@@ -476,9 +470,3 @@
     transform: none;
   }
 }
-
-
-
-
-
-
