@@ -239,7 +239,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .toggle-switch {
     width: 100%;
     max-width: 320px;
@@ -255,8 +255,8 @@
   }
   
   .toggle-slider.non-technical {
-    width: 150px;
-    transform: translateX(126px);
+    width: 170px;
+    transform: translateX(144px);
   }
 }
 

@@ -674,6 +674,18 @@
     .time {
         min-height: 60vh; /* Further reduced for smaller screens */
     }
+    .countdown-value {
+        width: 62px;
+        height: 80px;
+      }
+    
+      .countdown-digit {
+        font-size: 30px;
+      }
+    
+      .countdown-separator {
+        display: none;
+      }
 }
 
 
