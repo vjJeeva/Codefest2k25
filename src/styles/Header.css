@@ -341,7 +341,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 25px;
+      gap: 1px;
       opacity: 0;
       visibility: hidden;
       transform: scale(0.8);

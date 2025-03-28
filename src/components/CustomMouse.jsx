@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { BsFillCursorFill } from "react-icons/bs";
 import useSound from "use-sound";
-import clickSound from "../sounds/Pop.wav";
+import mobileClickSound from "../sounds/bubble.mp3"; // Mobile/Tablet sound
+import desktopClickSound from "../sounds/Pop.wav"; // Desktop/Laptop sound
 
 const CustomMouse = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isActive, setIsActive] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [playClick] = useSound(clickSound, { volume: 0.5 });
+
+  // Separate sound hooks
+  const [playMobileClick] = useSound(mobileClickSound, { volume: 0.5 });
+  const [playDesktopClick] = useSound(desktopClickSound, { volume: 0.5 });
 
   useEffect(() => {
-    // Detect mobile devices
+    // Detect mobile devices with stricter check
     const checkMobile = () => {
-      setIsMobile(
-        window.innerWidth <= 768 || 
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-      );
+      const mobileCheck = 
+        window.innerWidth <= 768 ||
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      setIsMobile(mobileCheck);
     };
 
     // Check on mount and add resize listener
@@ -42,13 +47,32 @@ const CustomMouse = () => {
     };
 
     const handleTouchStart = (e) => {
-      setIsActive(true);
-      playClick(); // Play sound on touch
-      updatePos(e);
+      if (isMobile) {
+        setIsActive(true);
+        // Play ONLY mobile sound when in mobile view
+        playMobileClick();
+        updatePos(e);
+      }
     };
 
     const handleTouchEnd = () => {
-      setIsActive(false);
+      if (isMobile) {
+        setIsActive(false);
+      }
+    };
+
+    const handleMouseDown = () => {
+      if (!isMobile) {
+        setIsActive(true);
+        // Play ONLY desktop sound when NOT in mobile view
+        playDesktopClick();
+      }
+    };
+
+    const handleMouseUp = () => {
+      if (!isMobile) {
+        setIsActive(false);
+      }
     };
 
     // Add event listeners for both mouse and touch events
@@ -56,13 +80,8 @@ const CustomMouse = () => {
     document.addEventListener("touchmove", updatePos);
     document.addEventListener("touchstart", handleTouchStart);
     document.addEventListener("touchend", handleTouchEnd);
-
-    // Mouse down/up for desktop
-    document.addEventListener("mousedown", () => {
-      setIsActive(true);
-      playClick();
-    });
-    document.addEventListener("mouseup", () => setIsActive(false));
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
 
     // Cleanup function
     return () => {
@@ -74,15 +93,12 @@ const CustomMouse = () => {
       document.removeEventListener("touchmove", updatePos);
       document.removeEventListener("touchstart", handleTouchStart);
       document.removeEventListener("touchend", handleTouchEnd);
-      document.removeEventListener("mousedown", () => {
-        setIsActive(true);
-        playClick();
-      });
-      document.removeEventListener("mouseup", () => setIsActive(false));
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [playClick]);
+  }, [isMobile, playMobileClick, playDesktopClick]);
 
-  // Don't render on mobile if isMobile is true
+  // Don't render on mobile
   if (isMobile) {
     return null;
   }
