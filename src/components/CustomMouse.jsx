@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { BsFillCursorFill } from "react-icons/bs";
 import useSound from "use-sound";
-import mobileClickSound from "../sounds/bubble.mp3"; // Mobile/Tablet sound
-import desktopClickSound from "../sounds/Pop.wav"; // Desktop/Laptop sound
+import desktopClickSound from "../sounds/Pop.wav";
 
 const CustomMouse = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isActive, setIsActive] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Separate sound hooks
-  const [playMobileClick] = useSound(mobileClickSound, { volume: 0.5 });
+  // Sound hook for desktop click
   const [playDesktopClick] = useSound(desktopClickSound, { volume: 0.5 });
 
   useEffect(() => {
     // Detect mobile devices with stricter check
     const checkMobile = () => {
-      const mobileCheck = 
+      const mobileCheck =
         window.innerWidth <= 768 ||
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      
+
       setIsMobile(mobileCheck);
     };
 
@@ -49,8 +47,6 @@ const CustomMouse = () => {
     const handleTouchStart = (e) => {
       if (isMobile) {
         setIsActive(true);
-        // Play ONLY mobile sound when in mobile view
-        playMobileClick();
         updatePos(e);
       }
     };
@@ -64,7 +60,7 @@ const CustomMouse = () => {
     const handleMouseDown = () => {
       if (!isMobile) {
         setIsActive(true);
-        // Play ONLY desktop sound when NOT in mobile view
+        // Play desktop sound when NOT in mobile view
         playDesktopClick();
       }
     };
@@ -96,7 +92,7 @@ const CustomMouse = () => {
       document.removeEventListener("mousedown", handleMouseDown);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isMobile, playMobileClick, playDesktopClick]);
+  }, [isMobile, playDesktopClick]);
 
   // Don't render on mobile
   if (isMobile) {
