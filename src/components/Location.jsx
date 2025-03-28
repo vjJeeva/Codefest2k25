@@ -5,6 +5,7 @@ const Location = () => {
   const [showMap, setShowMap] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
+  const modalRef = useRef(null);
 
   // Scroll reveal animation
   useEffect(() => {
@@ -32,8 +33,33 @@ const Location = () => {
     };
   }, []);
 
+  // Handle modal close
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        showMap && 
+        modalRef.current && 
+        !modalRef.current.contains(event.target)
+      ) {
+        setShowMap(false);
+      }
+    };
+
+    // Add event listener when modal is open
+    if (showMap) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    // Cleanup event listeners
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [showMap]);
+
   return (
-    <div 
+    <div
       ref={containerRef}
       className={`location-container scroll-reveal ${isVisible ? 'is-visible' : ''}`}
     >
@@ -41,7 +67,7 @@ const Location = () => {
         Location
       </h1>
       <span className="title-glow"></span>
-      
+
       <div className={`location-wrapper ${isVisible ? 'wrapper-animate' : ''}`}>
         <div className="map-section">
           <div
@@ -58,12 +84,12 @@ const Location = () => {
         </div>
 
         <div className="text-section">
-          <div 
+          <div
             className={`college-name ${isVisible ? 'text-animate-1' : ''}`}
           >
             Karpaga Vinayaga College of Engineering & Technology
           </div>
-          <div 
+          <div
             className={`location-details ${isVisible ? 'text-animate-2' : ''}`}
           >
             <p>GST Road,</p>
@@ -76,13 +102,10 @@ const Location = () => {
       </div>
 
       {showMap && (
-        <div
-          className="map-modal animate-fade-in"
-          onClick={() => setShowMap(false)}
-        >
+        <div className="map-modal animate-fade-in">
           <div
+            ref={modalRef}
             className="map-modal-content animate-scale-up"
-            onClick={(e) => e.stopPropagation()}
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.871986071898!2d79.9136875!3d12.590687499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a531d49e3a4dc6f%3A0x2485bea2ae7907a2!2sKarpaga%20Vinayaga%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1742834364290!5m2!1sen!2sin"
